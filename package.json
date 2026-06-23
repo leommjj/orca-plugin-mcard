@@ -1,0 +1,27 @@
+{
+  "name": "orca-plugin-mcard",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "NODE_ENV=production tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "valtio": "^1.13.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react-swc": "^3.11.0",
+    "rollup-plugin-external-globals": "^0.9.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
+  },
+  "packageManager": "pnpm@8.15.3",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "jsutils": "^1.15.0"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+src
+.DS_Store
+*.log
+public
+*.svg
+index.html
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+package-lock.json

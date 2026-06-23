@@ -1,0 +1,9 @@
+{
+  "id": "orca-plugin-mcard",
+  "name": "Mcard",
+  "version": "1.0.0",
+  "minAppVersion": "0.1.0",
+  "description": "A lightweight note-taking plugin for Orca, inspired by Flomo. Capture thoughts quickly and review them with daily reflection.",
+  "author": "orca-plugin-mcard",
+  "isDesktopOnly": false
+}
