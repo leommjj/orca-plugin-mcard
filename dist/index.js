@@ -1918,6 +1918,14 @@ function getNotePreview(note) {
   preview = preview.split("\n")[0];
   return preview.substring(0, 18) + (preview.length > 18 ? "..." : "");
 }
+function highlightText(text, keyword) {
+  if (!keyword || !text) return text;
+  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const parts = text.split(new RegExp(`(${escaped})`, "gi"));
+  return parts.map(
+    (part, i) => part.toLowerCase() === keyword.toLowerCase() ? React.createElement("mark", { key: i, className: "mcard-mention-highlight" }, part) : part
+  );
+}
 function formatDate(ts) {
   const d = new Date(ts);
   const weekday = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][d.getDay()];
@@ -4023,9 +4031,9 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
                             setShowCaptureParentPicker(false);
                           },
                           children: n.title ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-title", children: n.title }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-content", children: n.content.split("\n")[0].replace(/#[^\s]*/g, "").trim().substring(0, 40) })
-                          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: preview })
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-title", children: highlightText(n.title, keyword) }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-content", children: highlightText(n.content.split("\n")[0].replace(/#[^\s]*/g, "").trim().substring(0, 40), keyword) })
+                          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: highlightText(preview, keyword) })
                         },
                         n.id
                       );
@@ -4315,9 +4323,9 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
                                     setShowEditParentPicker(false);
                                   },
                                   children: n.title ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-title", children: n.title }),
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-content", children: n.content.split("\n")[0].replace(/#[^\s]*/g, "").trim().substring(0, 40) })
-                                  ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-edit-relation-info", children: preview })
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-title", children: highlightText(n.title, keyword) }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-content", children: highlightText(n.content.split("\n")[0].replace(/#[^\s]*/g, "").trim().substring(0, 40), keyword) })
+                                  ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-edit-relation-info", children: highlightText(preview, keyword) })
                                 },
                                 n.id
                               );
@@ -4916,9 +4924,9 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
                         void saveNotes(pluginName2, updated);
                       },
                       children: n.title ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-title", children: n.title }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-content", children: n.content.split("\n")[0].replace(/#[^\s]*/g, "").trim().substring(0, 40) })
-                      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-edit-relation-info", children: preview })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-title", children: highlightText(n.title, keyword) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-picker-content", children: highlightText(n.content.split("\n")[0].replace(/#[^\s]*/g, "").trim().substring(0, 40), keyword) })
+                      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-edit-relation-info", children: highlightText(preview, keyword) })
                     },
                     n.id
                   );
