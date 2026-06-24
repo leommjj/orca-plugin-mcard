@@ -890,7 +890,7 @@ function requireReactJsxRuntime_development() {
   jsxRuntime.exports = requireReactJsxRuntime_development();
 }
 var jsxRuntimeExports = jsxRuntime.exports;
-const mcardStyles = '/* ========== 三栏布局容器 ========== */\n.inbox-webview {\n  display: none;\n  width: 0;\n  height: 1px;\n}\n.mcard-shell {\n  display: flex;\n  height: 100%;\n  width: 100%;\n  min-height: 0;\n  overflow: hidden;\n  background: var(--orca-color-bg-1, #ffffff);\n  font-family: inherit;\n  color: var(--orca-color-text-1, #333333);\n}\n\n/* ========== 最左侧图标导航栏 ========== */\n.mcard-sidebar {\n  width: 64px;\n  background: var(--orca-color-bg-1, #fff);\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 10px 0 16px;\n  flex-shrink: 0;\n  height: 100%;\n}\n\n.mcard-sidebar-toggle {\n  width: 36px;\n  height: 36px;\n  border-radius: 8px;\n  margin-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  flex-shrink: 0;\n  padding: 0;\n  transition: background 0.2s;\n}\n\n.mcard-sidebar-toggle:hover {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n}\n\n.mcard-hamburger-line {\n  display: block;\n  width: 18px;\n  height: 2px;\n  border-radius: 2px;\n  background: #666;\n}\n\n.mcard-sidebar-nav {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n  width: 100%;\n  padding: 0 8px;\n}\n\n.mcard-nav-item {\n  width: 48px;\n  height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  border-radius: 10px;\n  position: relative;\n  transition: all 0.2s ease;\n  color: var(--orca-color-text-2, #555);\n  background: transparent;\n  border: none;\n  font-size: 20px;\n  margin: 0 auto;\n}\n\n.mcard-nav-item:hover {\n  background: var(--orca-color-bg-2, #f9f9f9);\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-nav-item.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 15%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-nav-item.active::before {\n  content: "";\n  position: absolute;\n  left: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 3px;\n  height: 22px;\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  border-radius: 0 3px 3px 0;\n}\n\n.mcard-nav-tooltip {\n  position: absolute;\n  left: calc(100% + 8px);\n  top: 50%;\n  transform: translateY(-50%);\n  background: var(--orca-color-text-2, #555);\n  color: var(--orca-color-bg-2, #f5f5f5);\n  font-size: 12px;\n  padding: 4px 8px;\n  border-radius: 4px;\n  white-space: nowrap;\n  pointer-events: none;\n  opacity: 0;\n  transition: opacity 0.15s ease;\n  z-index: 10;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n}\n\n.mcard-nav-item:hover .mcard-nav-tooltip {\n  opacity: 1;\n}\n\n.mcard-sidebar-bottom {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding-top: 10px;\n  border-top: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  margin-top: 4px;\n  width: 100%;\n}\n\n/* ========== 中间信息侧栏 ========== */\n.mcard-info-sidebar {\n  width: 240px;\n  background: var(--orca-color-bg-1, #fff);\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  padding: 12px 16px 16px;\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex-shrink: 0;\n  min-height: 0;\n  scrollbar-width: thin;\n  transition: width 0.25s ease, padding 0.25s ease, opacity 0.2s ease;\n}\n\n.mcard-info-sidebar.collapsed {\n  width: 0;\n  padding: 0;\n  opacity: 0;\n  overflow: hidden;\n  border-right: none;\n}\n\n.mcard-info-sidebar::-webkit-scrollbar {\n  width: 4px;\n}\n\n.mcard-info-sidebar::-webkit-scrollbar-thumb {\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 50%, transparent);\n  border-radius: 2px;\n}\n\n/* 搜索栏 */\n.mcard-search-box {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 10px;\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 8px;\n  margin-bottom: 12px;\n  transition: border-color 0.15s ease;\n}\n\n.mcard-search-box:focus-within {\n  border-color: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 40%, var(--orca-color-gray-3, #e0e0e0));\n}\n\n.mcard-search-input {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n  min-width: 0;\n}\n\n.mcard-search-input::placeholder {\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 统计 */\n.mcard-stats {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 14px;\n  padding: 0 4px;\n}\n\n.mcard-stat-item {\n  text-align: center;\n  flex: 1;\n}\n\n.mcard-stat-num {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  margin-bottom: 2px;\n  line-height: 1.2;\n}\n\n.mcard-stat-label {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* ========== 信息栏热力图 ========== */\n.mcard-heatmap-container {\n  margin-bottom: 20px;\n  position: relative;\n  overflow: visible;\n  flex-shrink: 0;\n}\n\n.mcard-heatmap {\n  display: grid;\n  grid-template-columns: repeat(12, 1fr);\n  grid-template-rows: repeat(7, 1fr);\n  gap: 4px;\n  margin-bottom: 8px;\n}\n\n.mcard-heatmap-cell {\n  width: 100%;\n  aspect-ratio: 1;\n  background-color: #ebedf0;\n  border-radius: 5px;\n  cursor: pointer;\n  position: relative;\n  transition: all 0.2s;\n}\n\n.mcard-heatmap-cell.level-1 {\n  background-color: #9be9a8;\n}\n\n.mcard-heatmap-cell.level-2 {\n  background-color: #40c463;\n}\n\n.mcard-heatmap-cell.level-3 {\n  background-color: #30a14e;\n}\n\n.mcard-heatmap-cell.level-4 {\n  background-color: #216e39;\n}\n\n.mcard-heatmap-cell:hover {\n  transform: scale(1.1);\n  box-shadow: 0 0 0 2px #40c463;\n}\n\n.mcard-heatmap-cell.selected {\n  box-shadow: 0 0 0 2px #216e39;\n}\n\n.mcard-heatmap-months {\n  display: grid;\n  grid-template-columns: repeat(12, 1fr);\n  gap: 3px;\n  margin-top: 6px;\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-heatmap-months span {\n  text-align: left;\n  white-space: nowrap;\n}\n\n/* 菜单项（全部笔记、每日回顾等） */\n.mcard-menu-list {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  margin-bottom: 14px;\n}\n\n.mcard-menu-item {\n  display: flex;\n  align-items: center;\n  padding: 8px 10px;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  color: var(--orca-color-text-2, #555);\n  border: none;\n  background: transparent;\n  font-family: inherit;\n  font-size: 13px;\n  text-align: left;\n  width: 100%;\n}\n\n.mcard-menu-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-menu-item.active {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n  font-weight: 500;\n}\n\n.mcard-menu-icon {\n  margin-right: 10px;\n  font-size: 15px;\n  width: 20px;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n\n.mcard-menu-text {\n  flex: 1;\n  line-height: 1.3;\n}\n\n.mcard-menu-count {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  font-variant-numeric: tabular-nums;\n  margin-left: 6px;\n}\n\n.mcard-menu-item.active .mcard-menu-count {\n  color: #ffffff;\n  opacity: 0.85;\n}\n\n/* 段落标题 */\n.mcard-section-title {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  margin: 10px 0 6px;\n  padding: 0 4px;\n  letter-spacing: 0.02em;\n}\n\n/* 标签列表 */\n.mcard-tag-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 5px;\n  padding: 0 4px;\n  margin-bottom: 14px;\n}\n\n.mcard-tag-chip {\n  font-size: 12px;\n  padding: 3px 9px;\n  border-radius: 12px;\n  border: 1px solid var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  cursor: pointer;\n  background: var(--orca-color-bg-2, #f5f5f5);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  transition: all 0.15s ease;\n  font-family: inherit;\n  display: inline-flex;\n  align-items: center;\n  gap: 3px;\n}\n\n.mcard-tag-chip:hover {\n  transform: translateY(-1px);\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);\n}\n\n.mcard-tag-chip.active {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n  font-weight: 600;\n}\n\n.mcard-tag-chip-count {\n  font-size: 11px;\n  opacity: 0.7;\n}\n\n.mcard-tag-chip.pinned {\n  border-color: #e8a735;\n  background: #fff8e8;\n  color: #b8860b;\n}\n\n.mcard-tag-pin-icon {\n  font-size: 10px;\n  margin-right: 1px;\n}\n\n/* 标签右键菜单 */\n.mcard-tag-menu-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 10000;\n  background: transparent;\n}\n\n.mcard-tag-menu-dropdown {\n  position: fixed;\n  background: #ffffff;\n  border: 1px solid #e0e0e0;\n  border-radius: 8px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);\n  padding: 4px 0;\n  min-width: 160px;\n  z-index: 10001;\n}\n\n.mcard-tag-menu-item {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 14px;\n  cursor: pointer;\n  font-size: 13px;\n  color: #333;\n  transition: background 0.15s;\n}\n\n.mcard-tag-menu-item:hover {\n  background: #f5f5f5;\n}\n\n.mcard-tag-menu-item.danger {\n  color: #e53935;\n}\n\n.mcard-tag-menu-item.danger:hover {\n  background: #fef0f0;\n}\n\n.mcard-tag-menu-icon {\n  font-size: 14px;\n  width: 20px;\n  text-align: center;\n}\n\n/* 重命名标签弹窗 */\n.mcard-tag-rename-modal {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: #ffffff;\n  border-radius: 12px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);\n  padding: 24px;\n  min-width: 320px;\n  z-index: 10002;\n}\n\n.mcard-tag-rename-title {\n  font-size: 16px;\n  font-weight: 600;\n  color: #333;\n  margin-bottom: 14px;\n}\n\n.mcard-tag-rename-input {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid #e0e0e0;\n  border-radius: 6px;\n  font-size: 14px;\n  outline: none;\n  transition: border-color 0.2s;\n  box-sizing: border-box;\n}\n\n.mcard-tag-rename-input:focus {\n  border-color: #4a90d9;\n}\n\n.mcard-tag-rename-hint {\n  font-size: 12px;\n  color: #999;\n  margin-top: 8px;\n  margin-bottom: 16px;\n}\n\n.mcard-tag-rename-actions {\n  display: flex;\n  gap: 8px;\n  justify-content: flex-end;\n}\n\n.mcard-tag-rename-cancel {\n  padding: 6px 16px;\n  border: 1px solid #e0e0e0;\n  border-radius: 6px;\n  background: #fff;\n  color: #666;\n  cursor: pointer;\n  font-size: 13px;\n}\n\n.mcard-tag-rename-cancel:hover {\n  background: #f5f5f5;\n}\n\n.mcard-tag-rename-save {\n  padding: 6px 16px;\n  border: none;\n  border-radius: 6px;\n  background: #4a90d9;\n  color: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n\n.mcard-tag-rename-save:hover {\n  background: #3a7bc8;\n}\n\n.mcard-tag-rename-danger {\n  padding: 6px 16px;\n  border: none;\n  border-radius: 6px;\n  background: #e53935;\n  color: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n\n.mcard-tag-rename-danger:hover {\n  background: #c62828;\n}\n\n.mcard-filter-bar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 8px 12px;\n  margin-bottom: 12px;\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 8%, transparent);\n  border: 1px solid color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 30%, transparent);\n  border-radius: 8px;\n  font-size: 12px;\n}\n\n.mcard-filter-label {\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-filter-clear {\n  background: transparent;\n  border: none;\n  color: var(--orca-color-primary-5, #4a90d9);\n  font-size: 12px;\n  cursor: pointer;\n  padding: 2px 6px;\n  border-radius: 4px;\n  transition: background 0.15s;\n}\n\n.mcard-filter-clear:hover {\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 15%, transparent);\n}\n\n/* ========== 右侧主内容区 ========== */\n.mcard-main {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background: var(--orca-color-bg-1, #fff);\n  overflow: hidden;\n  min-width: 0;\n  min-height: 0;\n  height: 100%;\n}\n\n/* 输入区 */\n.mcard-input-area {\n  padding: 8px 24px 16px;\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  flex-shrink: 0;\n  background: var(--orca-color-bg-1, #fff);\n}\n\n.mcard-input-box {\n  background-color: var(--orca-color-bg-1, #fff);\n  border: 1px solid #cccccc;\n  border-radius: 6px;\n  padding: 12px 16px;\n  transition: all 0.3s ease;\n  position: relative;\n}\n\n.mcard-input-box.focused {\n  border-color: var(--orca-color-primary-5, #4a90d9);\n  box-shadow: 0 0 0 3px color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 15%, transparent);\n  background-color: var(--orca-color-bg-1, #fff);\n}\n\n.mcard-input-wrapper {\n  position: relative;\n  margin-bottom: 12px;\n  overflow: visible;\n}\n\n.mcard-input-field {\n  width: 100%;\n  min-height: 80px;\n  max-height: 240px;\n  border: none;\n  outline: none;\n  background: transparent;\n  color: var(--orca-color-text-1, #333);\n  font-size: var(--mcard-font-size, 14.5px);\n  line-height: 1.8;\n  font-family: inherit;\n  resize: none;\n  overflow-y: auto;\n  scrollbar-width: none;\n}\n\n.mcard-input-field::-webkit-scrollbar {\n  display: none;\n}\n\n.mcard-input-field::placeholder {\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-input-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-top: 10px;\n}\n\n.mcard-toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n\n.mcard-toolbar-icon {\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 14px;\n  width: 28px;\n  height: 28px;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n}\n\n.mcard-toolbar-icon svg {\n  width: 16px;\n  height: 16px;\n}\n\n.mcard-toolbar-icon:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-send-btn {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n  border: none;\n  border-radius: 8px;\n  width: 32px;\n  height: 32px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n}\n\n.mcard-send-btn svg {\n  width: 18px;\n  height: 18px;\n}\n\n.mcard-send-btn:hover:not(:disabled) {\n  opacity: 0.9;\n  transform: scale(1.05);\n}\n\n.mcard-send-btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.mcard-tag-picker {\n  position: absolute;\n  left: 80px;\n  width: 260px;\n  background: #ffffff;\n  border: 1px solid #e0e0e0;\n  border-radius: 8px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);\n  z-index: 200;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n}\n\n.mcard-tag-picker-title {\n  padding: 6px 10px;\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  border-bottom: 1px solid #eeeeee;\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 50%, transparent);\n}\n\n.mcard-tag-picker-search {\n  width: 100%;\n  border: none;\n  outline: none;\n  background: transparent;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  box-sizing: border-box;\n}\n\n.mcard-tag-picker-list {\n  max-height: 220px;\n  overflow-y: auto;\n  scrollbar-width: thin;\n}\n\n.mcard-tag-picker-item {\n  padding: 6px 10px;\n  cursor: pointer;\n  transition: background 0.15s;\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  gap: 2px;\n}\n\n.mcard-tag-picker-item:hover,\n.mcard-tag-picker-item.active {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-tag-picker-item-hash {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 600;\n}\n\n.mcard-tag-picker-item-name {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 500;\n}\n\n/* 笔记列表（平铺） */\n.mcard-notes-list {\n  flex: 1;\n  overflow-y: auto;\n  padding: 16px 24px;\n  scrollbar-width: thin;\n  min-height: 0;\n}\n\n.mcard-notes-list::-webkit-scrollbar {\n  width: 6px;\n}\n\n.mcard-notes-list::-webkit-scrollbar-thumb {\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 50%, transparent);\n  border-radius: 3px;\n}\n\n.mcard-date-group {\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  margin: 12px 0 10px;\n  padding: 0 4px;\n  letter-spacing: 0.01em;\n}\n\n.mcard-note-card {\n  position: relative;\n  background-color: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 30%, transparent);\n  border: 1px solid #cccccc;\n  border-radius: 6px;\n  padding: 14px;\n  margin-bottom: 16px;\n  transition: all 0.2s;\n  cursor: pointer;\n  width: 100%;\n  box-sizing: border-box;\n  overflow: visible;\n  user-select: text;\n  -webkit-user-select: text;\n}\n\n.mcard-note-card:hover {\n  border-color: var(--orca-color-primary-5, #4a90d9);\n  box-shadow: 0 2px 8px color-mix(in srgb, var(--orca-color-gray-5, #999) 12%, transparent);\n}\n\n.mcard-note-card.pinned {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  background-color: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 5%, transparent);\n}\n\n.mcard-note-card.pinned::before {\n  content: "📌";\n  position: absolute;\n  top: 6px;\n  right: 6px;\n  font-size: 10px;\n  opacity: 0.6;\n}\n\n.mcard-note-image {\n  max-width: 100%;\n  max-height: 300px;\n  border-radius: 8px;\n  margin: 6px 0;\n  display: block;\n  cursor: zoom-in;\n  object-fit: contain;\n}\n\n/* 图片画廊 */\n.mcard-gallery-header {\n  padding: 16px 16px 8px;\n}\n\n.mcard-gallery-header-top {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  margin-bottom: 8px;\n}\n\n.mcard-gallery-header-title {\n  font-size: 18px;\n  font-weight: 600;\n  color: #333;\n}\n\n.mcard-gallery-header-meta {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: #999;\n}\n\n.mcard-gallery-header-dot {\n  opacity: 0.5;\n}\n\n.mcard-gallery-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 8px;\n}\n\n.mcard-gallery-tag-chip {\n  padding: 3px 10px;\n  border-radius: 12px;\n  font-size: 12px;\n  color: #666;\n  background: #f0f0f0;\n  cursor: pointer;\n  transition: all 0.2s;\n  user-select: none;\n}\n\n.mcard-gallery-tag-chip:hover {\n  background: #e0e0e0;\n}\n\n.mcard-gallery-tag-chip.active {\n  background: #4a90d9;\n  color: #fff;\n}\n\n.mcard-gallery-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));\n  gap: 8px;\n  padding: 12px;\n}\n\n.mcard-gallery-item {\n  aspect-ratio: 1;\n  overflow: hidden;\n  border-radius: 8px;\n  cursor: pointer;\n  background: #f5f5f5;\n  position: relative;\n}\n\n.mcard-gallery-img-wrapper {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n\n.mcard-gallery-item img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 0.2s;\n}\n\n.mcard-gallery-item:hover img {\n  transform: scale(1.05);\n}\n\n.mcard-gallery-overlay {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  padding: 8px;\n  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 60%);\n  opacity: 0;\n  transition: opacity 0.2s;\n  pointer-events: none;\n}\n\n.mcard-gallery-item:hover .mcard-gallery-overlay {\n  opacity: 1;\n}\n\n.mcard-gallery-overlay-tags {\n  color: #8cc8ff;\n  font-size: 11px;\n  margin-bottom: 4px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-gallery-overlay-text {\n  color: rgba(255, 255, 255, 0.9);\n  font-size: 12px;\n  line-height: 1.4;\n  margin-bottom: 4px;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n\n.mcard-gallery-overlay-date {\n  color: rgba(255, 255, 255, 0.6);\n  font-size: 10px;\n}\n\n/* 卡片闪烁高亮 */\n.mcard-note-card-flash {\n  animation: mcard-card-flash 2s ease-out;\n}\n\n@keyframes mcard-card-flash {\n  0% { background-color: rgba(74, 144, 217, 0.3); }\n  100% { background-color: transparent; }\n}\n\n/* 图片预览模态框 */\n.mcard-image-preview-modal {\n  position: fixed;\n  inset: 0;\n  z-index: 99999;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.mcard-image-preview-overlay {\n  position: absolute;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.9);\n}\n\n.mcard-image-preview-toolbar {\n  position: absolute;\n  top: 16px;\n  right: 16px;\n  z-index: 2;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.mcard-image-preview-close {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n\n.mcard-image-preview-close:hover {\n  background: rgba(255, 255, 255, 0.3);\n}\n\n.mcard-image-preview-container {\n  position: relative;\n  z-index: 1;\n  max-width: 90vw;\n  max-height: 90vh;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.mcard-image-preview-img {\n  max-width: none;\n  max-height: none;\n  user-select: none;\n  transform-origin: center center;\n  transition: transform 0.05s ease-out;\n}\n\n.mcard-image-preview-img.dragging {\n  cursor: grabbing;\n  transition: none;\n}\n\n.mcard-image-preview-hint {\n  position: absolute;\n  bottom: 24px;\n  left: 50%;\n  transform: translateX(-50%);\n  color: rgba(255, 255, 255, 0.6);\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 12px;\n  background: rgba(0, 0, 0, 0.4);\n  opacity: 0;\n  transition: opacity 0.3s;\n  pointer-events: none;\n  white-space: nowrap;\n}\n\n.mcard-image-preview-hint.show {\n  opacity: 1;\n}\n\n.mcard-note-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 0;\n  overflow: hidden;\n}\n\n.mcard-note-actions {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-shrink: 0;\n  opacity: 0;\n  transition: opacity 0.2s;\n  position: relative;\n  pointer-events: auto;\n}\n\n.mcard-note-card:hover .mcard-note-actions,\n.mcard-note-actions:focus-within {\n  opacity: 1;\n  pointer-events: auto;\n}\n\n.mcard-note-menu-btn {\n  color: var(--orca-color-gray-5, #999);\n  cursor: pointer;\n  font-size: 14px;\n  width: 28px;\n  height: 28px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  transition: all 0.15s ease;\n  background: transparent;\n  border: none;\n  padding: 0;\n  outline: none;\n  -webkit-appearance: none;\n  appearance: none;\n  line-height: 0;\n  font-family: inherit;\n  pointer-events: auto;\n}\n\n.mcard-note-menu-btn svg {\n  width: 18px;\n  height: 18px;\n  display: block;\n  pointer-events: none;\n}\n\n.mcard-note-menu-btn:hover {\n  background: color-mix(in srgb, var(--orca-color-text-2, #555) 8%, transparent);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-note-menu-btn:active {\n  background: color-mix(in srgb, var(--orca-color-text-2, #555) 15%, transparent);\n  transform: scale(0.95);\n}\n\n.mcard-note-menu-dropdown {\n  background: var(--orca-color-bg-2, #ffffff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e5e5e5) 40%, transparent);\n  border-radius: 6px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);\n  min-width: 160px;\n  padding: 5px 0;\n  overflow: hidden;\n  user-select: none;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item {\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #333);\n  cursor: pointer;\n  transition: background 0.12s ease, color 0.12s ease;\n  line-height: 1.4;\n  margin: 0 4px;\n  border-radius: 4px;\n  gap: 0;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item.danger {\n  color: var(--orca-color-error, #e53935);\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item.danger:hover {\n  background: color-mix(in srgb, var(--orca-color-error, #e53935) 10%, transparent);\n}\n\n.mcard-note-menu-dropdown .mcard-menu-icon {\n  width: 16px;\n  height: 16px;\n  margin-right: 8px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  color: inherit;\n  flex-shrink: 0;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-text {\n  flex: 1;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-divider {\n  height: 1px;\n  background: var(--orca-color-gray-3, #e5e5e5);\n  margin: 4px 12px;\n  opacity: 0.6;\n}\n\n.mcard-note-date {\n  font-size: 12px;\n  color: var(--orca-color-text-2, #555);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  flex-shrink: 1;\n  min-width: 0;\n  user-select: text;\n  -webkit-user-select: text;\n}\n\n.mcard-note-menu {\n  color: var(--orca-color-gray-5, #999);\n  cursor: pointer;\n  font-size: 14px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 4px;\n  transition: all 0.2s;\n}\n\n.mcard-note-menu:hover {\n  background-color: var(--orca-color-gray-2, #f0f0f0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-note-menu svg {\n  width: 14px;\n  height: 14px;\n}\n\n.mcard-note-content {\n  font-size: var(--mcard-font-size, 14.5px);\n  line-height: 2;\n  color: var(--orca-color-text-1, #333);\n  margin-top: 6px;\n  margin-bottom: 0px;\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  max-width: 100%;\n  overflow: hidden;\n  user-select: text;\n  -webkit-user-select: text;\n  white-space: pre-wrap;\n}\n\n/* Markdown 渲染内容 */\n.mcard-note-content-rendered {\n  font-size: var(--mcard-font-size, 14.5px);\n  line-height: 1.8;\n  color: #333;\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  user-select: text;\n  -webkit-user-select: text;\n  white-space: normal;\n  display: block;\n}\n\n.mcard-note-content-rendered p {\n  margin: 0 0 8px;\n}\n\n.mcard-note-content-rendered p:last-child {\n  margin-bottom: 0;\n}\n\n.mcard-note-content-rendered h1,\n.mcard-note-content-rendered h2,\n.mcard-note-content-rendered h3,\n.mcard-note-content-rendered h4,\n.mcard-note-content-rendered h5,\n.mcard-note-content-rendered h6 {\n  margin: 12px 0 6px;\n  font-weight: 600;\n  line-height: 1.4;\n}\n\n.mcard-note-content-rendered h1 { font-size: 1.5em; }\n.mcard-note-content-rendered h2 { font-size: 1.3em; }\n.mcard-note-content-rendered h3 { font-size: 1.15em; }\n.mcard-note-content-rendered h4 { font-size: 1em; }\n.mcard-note-content-rendered h5 { font-size: 0.9em; }\n.mcard-note-content-rendered h6 { font-size: 0.85em; color: #999; }\n\n.mcard-note-content-rendered ul,\n.mcard-note-content-rendered ol {\n  margin: 4px 0 8px;\n  padding-left: 0;\n  list-style-type: none;\n  display: block;\n}\n\n.mcard-note-content-rendered ol {\n  counter-reset: list-counter;\n}\n\n.mcard-note-content-rendered li {\n  position: relative;\n  padding-left: 20px;\n  margin: 2px 0;\n  display: block;\n}\n\n.mcard-note-content-rendered ol li {\n  counter-increment: list-counter;\n}\n\n.mcard-note-content-rendered ol li::before {\n  content: counter(list-counter) ".";\n  position: absolute;\n  top: 0;\n  left: 0;\n  color: #999;\n  font-size: inherit;\n}\n\n.mcard-note-content-rendered ul li:not(.task-item)::before {\n  content: "";\n  position: absolute;\n  top: 50%;\n  left: 0;\n  height: 6px;\n  width: 6px;\n  margin-top: -5px;\n  border-radius: 50%;\n  background-color: #999;\n}\n\n.mcard-note-content-rendered .task-list {\n  list-style: none;\n  padding-left: 4px;\n}\n\n.mcard-note-content-rendered .task-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n}\n\n.mcard-note-content-rendered .mcard-task-checkbox {\n  margin-top: 4px;\n  cursor: default;\n}\n\n.mcard-note-content-rendered blockquote {\n  margin: 8px 0;\n  padding: 8px 12px;\n  border-left: 3px solid #4a90d9;\n  background: #f9f9f9;\n  border-radius: 0 4px 4px 0;\n  color: #666;\n}\n\n.mcard-note-content-rendered blockquote p:last-child {\n  margin-bottom: 0;\n}\n\n.mcard-note-content-rendered pre {\n  margin: 8px 0;\n  padding: 12px;\n  background: #f5f5f5;\n  border-radius: 6px;\n  overflow-x: auto;\n  font-size: 0.9em;\n  line-height: 1.5;\n}\n\n.mcard-note-content-rendered code {\n  padding: 2px 5px;\n  background: #f0f0f0;\n  border-radius: 3px;\n  font-size: 0.9em;\n  font-family: "SF Mono", Monaco, Consolas, "Courier New", monospace;\n}\n\n.mcard-note-content-rendered pre code {\n  padding: 0;\n  background: none;\n}\n\n.mcard-note-content-rendered a {\n  color: #4a90d9;\n  text-decoration: none;\n}\n\n.mcard-note-content-rendered a:hover {\n  text-decoration: underline;\n}\n\n.mcard-note-content-rendered strong {\n  font-weight: 600;\n}\n\n.mcard-note-content-rendered em {\n  font-style: italic;\n}\n\n.mcard-note-content-rendered del {\n  text-decoration: line-through;\n  color: #999;\n}\n\n.mcard-note-content-rendered hr {\n  border: none;\n  border-top: 1px solid #e0e0e0;\n  margin: 12px 0;\n}\n\n.mcard-note-content-rendered .mcard-inline-tag {\n  color: #4a90d9;\n  cursor: pointer;\n  font-weight: 500;\n}\n\n.mcard-note-content-rendered .mcard-inline-tag:hover {\n  text-decoration: underline;\n}\n\n.mcard-note-content-rendered .mcard-note-image {\n  max-width: 100%;\n  max-height: 300px;\n  border-radius: 8px;\n  margin: 6px 0;\n  display: block;\n  cursor: zoom-in;\n  object-fit: contain;\n}\n\n.mcard-inline-tag {\n  display: inline;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 500;\n  cursor: pointer;\n  padding: 1px 4px;\n  border-radius: 4px;\n  transition: background 0.12s ease, color 0.12s ease;\n}\n\n.mcard-inline-tag:hover {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n}\n\n.mcard-inline-tag.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 20%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-note-tags {\n  margin-top: 8px;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 5px;\n}\n\n.mcard-note-tag {\n  font-size: 11px;\n  padding: 2px 8px;\n  border-radius: 10px;\n  border: 1px solid var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  display: inline-block;\n}\n\n/* 空状态 */\n.mcard-empty {\n  text-align: center;\n  padding: 60px 20px;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 13px;\n}\n\n.mcard-empty-icon {\n  font-size: 40px;\n  margin-bottom: 12px;\n  opacity: 0.4;\n}\n\n/* 回顾视图 */\n.mcard-review-card {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 24px;\n  margin: 20px 24px;\n}\n\n.mcard-review-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 16px;\n  padding-bottom: 12px;\n  border-bottom: 1px dashed var(--orca-color-gray-3, #e0e0e0);\n}\n\n.mcard-review-title {\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-review-progress {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  font-variant-numeric: tabular-nums;\n}\n\n.mcard-review-content {\n  font-size: calc(var(--mcard-font-size, 14.5px) + 1px);\n  line-height: 1.75;\n  color: var(--orca-color-text-1, #333);\n  white-space: pre-wrap;\n  word-break: break-word;\n  min-height: 60px;\n}\n\n.mcard-review-actions {\n  display: flex;\n  gap: 8px;\n  margin-top: 16px;\n  padding-top: 14px;\n  border-top: 1px dashed var(--orca-color-gray-3, #e0e0e0);\n}\n\n.mcard-review-btn {\n  flex: 1;\n  padding: 8px 16px;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  font-family: inherit;\n}\n\n.mcard-review-btn.primary {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n}\n\n.mcard-review-btn.secondary {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-review-btn:hover {\n  opacity: 0.9;\n}\n\n/* Loading spinner */\n.mcard-spinner {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid var(--orca-color-gray-3, #e0e0e0);\n  border-top-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  border-radius: 50%;\n  animation: mcard-spin 0.8s linear infinite;\n}\n\n@keyframes mcard-spin {\n  to { transform: rotate(360deg); }\n}\n\n/* 每日回顾统计栏 */\n.mcard-daily-stats {\n  display: flex;\n  gap: 10px;\n  padding: 0 24px;\n  margin-bottom: 14px;\n}\n\n.mcard-daily-stat {\n  flex: 1;\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 10px;\n  padding: 10px;\n  text-align: center;\n}\n\n.mcard-daily-stat-num {\n  font-size: 20px;\n  font-weight: 600;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  line-height: 1.2;\n}\n\n.mcard-daily-stat-label {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  margin-top: 2px;\n}\n\n/* 紧凑模式 */\n.mcard-root.compact .mcard-note-item {\n  padding: 8px 12px;\n  margin-bottom: 6px;\n}\n\n.mcard-root.compact .mcard-note-content {\n  font-size: calc(var(--mcard-font-size, 14.5px) - 1px);\n  line-height: 1.55;\n}\n\n/* 模态框 */\n.mcard-capture-modal {\n  position: fixed;\n  inset: 0;\n  z-index: 9999;\n  background: transparent;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 24px;\n  font-family: inherit;\n}\n\n.mcard-capture-modal-inner {\n  width: 100%;\n  max-width: 460px;\n  background: #fff;\n  border-radius: 14px;\n  padding: 18px 18px 14px;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);\n  border: 1px solid #e0e0e0;\n}\n\n.mcard-capture-modal-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 12px;\n}\n\n.mcard-capture-modal-title {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--orca-color-gray-5, #999);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n}\n\n.mcard-capture-modal-close {\n  background: transparent;\n  border: none;\n  font-size: 18px;\n  cursor: pointer;\n  color: var(--orca-color-gray-5, #999);\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-family: inherit;\n}\n\n.mcard-capture-modal-close:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-capture-modal textarea {\n  width: 100%;\n  min-height: 140px;\n  max-height: 320px;\n  resize: vertical;\n  border: none;\n  outline: none;\n  background: #fff;\n  color: #333;\n  font-size: 15px;\n  line-height: 1.7;\n  font-family: inherit;\n}\n\n.mcard-capture-modal-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-top: 12px;\n  border-top: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  gap: 8px;\n}\n\n.mcard-capture-modal-hint {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 隐藏旧的 mcard-root 基础样式，改为 shell 布局 */\n.mcard-root {\n  height: 100%;\n  width: 100%;\n  min-height: 0;\n  overflow: hidden;\n  display: block;\n  padding: 0 !important;\n  background: var(--orca-color-bg-1, #fff);\n  position: relative;\n}\n\n.mcard-root[data-mcard-theme="morandi"] {\n  --mcard-accent: var(--mcard-morandi-color, #9CAF88);\n  background: var(--mcard-morandi-bg, #F7F8F5);\n}\n\n.mcard-root[data-mcard-theme="siyuan"] {\n  --mcard-accent: var(--orca-color-primary-5, #4a90d9);\n}\n\n.mcard-root[data-mcard-theme="original"] {\n  --mcard-accent: var(--orca-color-primary-5, #2d7a7a);\n}\n\n/* ========== 统计视图 ========== */\n.mcard-stats-view {\n  padding: 20px 24px;\n  overflow-y: auto;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n.mcard-stats-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 20px;\n}\n\n.mcard-stats-title {\n  font-size: 22px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-stats-year-select {\n  padding: 6px 12px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-2, #f5f5f5);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  cursor: pointer;\n  outline: none;\n}\n\n.mcard-stats-year-select:hover {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-stats-cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));\n  gap: 12px;\n  margin-bottom: 24px;\n}\n\n.mcard-stat-card {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 16px 12px;\n  text-align: center;\n  transition: all 0.15s ease;\n}\n\n.mcard-stat-card:hover {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  box-shadow: 0 4px 12px color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n}\n\n.mcard-stat-card-num {\n  font-size: 24px;\n  font-weight: 700;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  line-height: 1.2;\n}\n\n.mcard-stat-card-label {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-top: 4px;\n}\n\n.mcard-stats-section {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 20px;\n  margin-bottom: 16px;\n}\n\n.mcard-stats-subtitle {\n  font-size: 16px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 4px;\n}\n\n.mcard-stats-meta {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-bottom: 16px;\n}\n\n.mcard-stats-empty {\n  text-align: center;\n  color: var(--orca-color-gray-5, #999);\n  padding: 24px;\n  font-size: 13px;\n}\n\n/* 每日记录柱状图 */\n.mcard-monthly-bars {\n  display: flex;\n  align-items: flex-end;\n  gap: 4px;\n  height: 120px;\n  padding: 0 4px;\n  margin-bottom: 8px;\n}\n\n.mcard-monthly-bar {\n  flex: 1;\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 30%, transparent);\n  border-radius: 4px 4px 0 0;\n  position: relative;\n  min-height: 4px;\n  transition: all 0.15s ease;\n}\n\n.mcard-monthly-bar:hover {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-monthly-bar-label {\n  position: absolute;\n  top: -18px;\n  left: 50%;\n  transform: translateX(-50%);\n  font-size: 10px;\n  color: var(--orca-color-gray-5, #999);\n  white-space: nowrap;\n}\n\n.mcard-monthly-days {\n  display: flex;\n  gap: 4px;\n  padding: 0 4px;\n}\n\n.mcard-monthly-days span {\n  flex: 1;\n  text-align: center;\n  font-size: 10px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 月度分布柱状图 */\n.mcard-yearly-bars {\n  display: flex;\n  align-items: flex-end;\n  gap: 10px;\n  height: 120px;\n  padding: 0 4px;\n  margin-bottom: 8px;\n}\n\n.mcard-yearly-bar {\n  flex: 1;\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 40%, transparent);\n  border-radius: 6px 6px 0 0;\n  position: relative;\n  min-height: 6px;\n  transition: all 0.15s ease;\n}\n\n.mcard-yearly-bar:hover {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-yearly-bar-label {\n  position: absolute;\n  top: -18px;\n  left: 50%;\n  transform: translateX(-50%);\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  white-space: nowrap;\n}\n\n.mcard-yearly-months {\n  display: flex;\n  gap: 10px;\n  padding: 0 4px;\n}\n\n.mcard-yearly-months span {\n  flex: 1;\n  text-align: center;\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 常用标签列表 */\n.mcard-tags-list {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n\n.mcard-tag-item {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.mcard-tag-name {\n  font-size: 13px;\n  padding: 3px 10px;\n  border-radius: 12px;\n  border: 1px solid;\n  flex-shrink: 0;\n  min-width: 80px;\n  text-align: center;\n}\n\n.mcard-tag-bar-wrapper {\n  flex: 1;\n  height: 8px;\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.mcard-tag-bar {\n  height: 100%;\n  border-radius: 4px;\n  transition: width 0.3s ease;\n}\n\n.mcard-tag-count {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  min-width: 30px;\n  text-align: right;\n}\n\n/* 标签云 */\n.mcard-tag-cloud {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  padding: 8px 0;\n}\n\n.mcard-tag-cloud-item {\n  padding: 6px 14px;\n  border-radius: 16px;\n  font-weight: 500;\n  transition: all 0.15s ease;\n  cursor: pointer;\n  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);\n}\n\n.mcard-tag-cloud-item:hover {\n  transform: scale(1.08);\n  box-shadow: 0 4px 12px color-mix(in srgb, currentColor 20%, transparent);\n}\n\n/* ========== 设置视图 ========== */\n.mcard-settings-area {\n  flex: 1;\n  display: flex;\n  height: 100%;\n  overflow: hidden;\n  background: var(--orca-color-bg-1, #fff);\n}\n\n.mcard-settings-nav {\n  width: 200px;\n  min-width: 200px;\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  padding: 20px 12px;\n  overflow-y: auto;\n  box-sizing: border-box;\n}\n\n.mcard-settings-nav-header {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  padding: 4px 12px 16px;\n}\n\n.mcard-settings-nav-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 14px;\n  border-radius: 8px;\n  font-size: 14px;\n  color: var(--orca-color-text-2, #555);\n  cursor: pointer;\n  transition: background 0.15s, color 0.15s;\n  margin-bottom: 2px;\n}\n\n.mcard-settings-nav-item:hover {\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 80%, transparent);\n}\n\n.mcard-settings-nav-item.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 500;\n}\n\n.mcard-settings-nav-icon {\n  font-size: 16px;\n  flex-shrink: 0;\n}\n\n.mcard-settings-content {\n  flex: 1;\n  padding: 24px 36px;\n  overflow-y: auto;\n  box-sizing: border-box;\n  max-width: 720px;\n}\n\n.mcard-settings-section-disabled {\n  opacity: 0.5;\n  pointer-events: none;\n}\n\n.mcard-settings-section {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 18px 20px;\n  margin-bottom: 14px;\n}\n\n.mcard-settings-subtitle {\n  font-size: 15px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 6px;\n}\n\n.mcard-settings-desc {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-bottom: 12px;\n}\n\n.mcard-settings-row {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.mcard-settings-label {\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-settings-select {\n  padding: 6px 12px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  cursor: pointer;\n  outline: none;\n}\n\n.mcard-settings-select:hover {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-settings-input {\n  padding: 6px 10px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  outline: none;\n  width: 100px;\n}\n\n.mcard-settings-input:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-settings-btn {\n  padding: 6px 14px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n\n.mcard-settings-btn:hover {\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-settings-btn-danger {\n  color: #d32f2f;\n  border-color: #e57373;\n}\n.mcard-settings-btn-danger:hover {\n  background: #fde8e8;\n  border-color: #d32f2f;\n}\n\n.mcard-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0,0,0,0.4);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 99999;\n}\n\n.mcard-confirm-dialog {\n  background: var(--orca-color-bg-1, #fff);\n  border-radius: 12px;\n  padding: 24px;\n  max-width: 380px;\n  width: 90%;\n  box-shadow: 0 8px 32px rgba(0,0,0,0.2);\n}\n\n.mcard-confirm-title {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 8px;\n}\n\n.mcard-confirm-desc {\n  font-size: 13px;\n  color: var(--orca-color-gray-5, #999);\n  line-height: 1.5;\n  margin-bottom: 20px;\n}\n\n.mcard-confirm-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n}\n\n.mcard-settings-unit {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* Toggle Switch */\n.mcard-toggle {\n  position: relative;\n  display: inline-block;\n  width: 44px;\n  height: 24px;\n  cursor: pointer;\n}\n\n.mcard-toggle input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.mcard-toggle-slider {\n  position: absolute;\n  inset: 0;\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  border-radius: 24px;\n  transition: 0.2s;\n}\n\n.mcard-toggle-slider::before {\n  content: "";\n  position: absolute;\n  height: 18px;\n  width: 18px;\n  left: 3px;\n  top: 3px;\n  background: white;\n  border-radius: 50%;\n  transition: 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);\n}\n\n.mcard-toggle input:checked + .mcard-toggle-slider {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-toggle input:checked + .mcard-toggle-slider::before {\n  transform: translateX(20px);\n}\n\n/* 主题色选择 */\n.mcard-theme-grid {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.mcard-theme-swatch {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 2px solid transparent;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  padding: 0;\n}\n\n.mcard-theme-swatch:hover {\n  transform: scale(1.1);\n}\n\n.mcard-theme-swatch.active {\n  border-color: var(--orca-color-text-1, #333);\n  box-shadow: 0 0 0 2px var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n/* ========== 热力图（GitHub 风格贡献图） ========== */\n.mcard-contribution-section {\n  background: var(--orca-color-bg-1, #fff);\n  border-radius: 8px;\n  padding: 18px 20px;\n  margin-bottom: 12px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 25%, transparent);\n  box-shadow: none;\n}\n\n.mcard-contribution-body {\n  display: flex;\n  gap: 8px;\n  align-items: stretch;\n  width: 100%;\n}\n\n.mcard-contribution-columns {\n  display: flex;\n  gap: 4px;\n  width: 100%;\n}\n\n.mcard-contribution-column {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  min-width: 0;\n}\n\n.mcard-contribution-cell {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 3px;\n  background: #ebedf0;\n  cursor: pointer;\n  transition: transform 0.15s;\n  min-height: 0;\n}\n\n.mcard-contribution-cell:hover {\n  transform: scale(1.2);\n  box-shadow: 0 0 0 1px #40c463;\n}\n\n.mcard-contribution-cell.level-empty {\n  background: #ebedf0;\n  opacity: 0.5;\n  cursor: default;\n}\n\n.mcard-contribution-cell.level-empty:hover {\n  transform: none;\n  box-shadow: none;\n}\n\n.mcard-contribution-cell.level-1 {\n  background: #9be9a8;\n}\n\n.mcard-contribution-cell.level-2 {\n  background: #40c463;\n}\n\n.mcard-contribution-cell.level-3 {\n  background: #30a14e;\n}\n\n.mcard-contribution-cell.level-4 {\n  background: #216e39;\n}\n\n.mcard-contribution-months {\n  position: relative;\n  margin-top: 8px;\n  height: 16px;\n  width: 100%;\n}\n\n.mcard-contribution-month-label {\n  position: absolute;\n  transform: translateX(-50%);\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  white-space: nowrap;\n  line-height: 1;\n}\n\n.mcard-contribution-legend {\n  display: none;\n}\n\n/* ========== 长笔记自动折叠 ========== */\n.mcard-note-content.collapsed {\n  max-height: var(--collapse-max-height, 116px);\n  overflow: hidden;\n  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 36px), transparent 100%);\n  mask-image: linear-gradient(to bottom, black calc(100% - 36px), transparent 100%);\n}\n\n.mcard-note-content.expanded {\n  max-height: none;\n  -webkit-mask-image: none;\n  mask-image: none;\n}\n\n.mcard-expand-btn {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 2px;\n  margin-top: 4px;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 13px;\n  cursor: pointer;\n  user-select: none;\n  transition: color 0.2s;\n  background: transparent;\n  border: none;\n  font-family: inherit;\n  padding: 2px 0;\n}\n\n.mcard-expand-btn:hover {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-expand-btn svg {\n  width: 14px;\n  height: 14px;\n  transition: transform 0.2s;\n}\n\n.mcard-expand-btn.expanded svg {\n  transform: rotate(180deg);\n}\n\n/* ========== 批注（Memo）样式 ========== */\n.mcard-note-memo-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 12px;\n  cursor: pointer;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-family: inherit;\n  transition: background 0.15s, color 0.15s;\n}\n\n.mcard-note-memo-btn:hover {\n  background: var(--orca-color-gray-1, #f5f5f5);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n/* 头部圆形图标按钮 */\n.mcard-note-memo-btn-icon {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  cursor: pointer;\n  width: 28px;\n  height: 28px;\n  border-radius: 50%;\n  font-family: inherit;\n  transition: background 0.15s, color 0.15s;\n  position: relative;\n}\n\n.mcard-note-memo-btn-icon:hover {\n  background: var(--orca-color-gray-1, #f5f5f5);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-note-memo-btn-icon svg {\n  width: 14px;\n  height: 14px;\n}\n\n.mcard-note-memo-badge {\n  position: absolute;\n  top: 0;\n  right: 0;\n  min-width: 14px;\n  height: 14px;\n  padding: 0 3px;\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #fff;\n  font-size: 10px;\n  font-weight: 600;\n  line-height: 14px;\n  text-align: center;\n  border-radius: 7px;\n  transform: translate(2px, -2px);\n  pointer-events: none;\n}\n\n.mcard-note-memos {\n  margin-top: 8px;\n  padding-top: 8px;\n  border-top: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n\n.mcard-note-memo-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  padding: 6px 8px;\n  background: var(--orca-color-gray-1, #f5f5f5);\n  border-radius: 6px;\n  font-size: 13px;\n  line-height: 1.6;\n}\n\n.mcard-note-memo-content {\n  color: var(--orca-color-text-1, #333);\n  word-break: break-word;\n}\n\n.mcard-note-memo-actions {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 4px;\n}\n\n.mcard-note-memo-date {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-note-memo-menu-btn {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  opacity: 0.5;\n  transition: opacity 0.15s;\n  border-radius: 3px;\n  color: var(--orca-color-text-2, #555);\n  display: flex;\n  align-items: center;\n}\n\n.mcard-note-memo-menu-btn:hover {\n  opacity: 1;\n  background: var(--orca-color-bg-2, #f5f5f5);\n}\n\n.mcard-note-memo-input-wrap {\n  margin-top: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n\n.mcard-note-memo-input {\n  width: 100%;\n  box-sizing: border-box;\n  resize: none;\n  border: 1px solid var(--orca-color-gray-1, #f5f5f5);\n  border-radius: 6px;\n  padding: 8px;\n  font-size: 13px;\n  line-height: 1.5;\n  font-family: inherit;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  outline: none;\n  transition: border-color 0.2s;\n}\n\n.mcard-note-memo-input:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-note-memo-input-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 6px;\n}\n\n.mcard-note-memo-cancel {\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 12px;\n  cursor: pointer;\n  padding: 4px 10px;\n  border-radius: 4px;\n  font-family: inherit;\n}\n\n.mcard-note-memo-cancel:hover {\n  background: var(--orca-color-gray-1, #f5f5f5);\n}\n\n.mcard-note-memo-save {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  border: none;\n  color: #fff;\n  font-size: 12px;\n  cursor: pointer;\n  padding: 4px 14px;\n  border-radius: 4px;\n  font-family: inherit;\n  font-weight: 500;\n  transition: opacity 0.15s;\n}\n\n.mcard-note-memo-save:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.mcard-note-memo-save:not(:disabled):hover {\n  opacity: 0.85;\n}\n\n/* 详情面板批注 */\n.mcard-detail-memo-bar {\n  margin-top: 16px;\n}\n\n.mcard-detail-memos {\n  margin-top: 8px;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n\n/* 批注笔记底部显示原始笔记引用 */\n.mcard-note-relation {\n  margin-top: 8px;\n  padding-top: 8px;\n  border-top: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n}\n\n/* 多个关联区域相邻时，只保留第一个的虚线 */\n.mcard-note-relation + .mcard-note-relation {\n  border-top: none;\n  padding-top: 0;\n  margin-top: 0;\n}\n\n.mcard-note-relation-item {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 0;\n  background: transparent;\n  border-radius: 0;\n  cursor: pointer;\n  transition: opacity 0.15s;\n  font-size: 12px;\n}\n\n.mcard-note-relation-item:hover {\n  opacity: 0.8;\n}\n\n.mcard-note-relation-item svg {\n  width: 16px;\n  height: 16px;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  flex-shrink: 0;\n}\n\n.mcard-note-relation-info {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-size: 12px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n/* 编辑模式关联显示 */\n.mcard-edit-relation-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  padding-top: 6px;\n  border-top: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n  margin-top: 2px;\n}\n\n.mcard-edit-relation {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 8px;\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border-radius: 6px;\n  font-size: 12px;\n  max-width: 100%;\n}\n\n.mcard-edit-relation-row {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 4px;\n  padding-bottom: 6px;\n  border-bottom: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n}\n\n.mcard-edit-parent-picker-wrapper {\n  position: relative;\n  flex: 1;\n  min-width: 120px;\n}\n\n.mcard-parent-icon {\n  display: flex;\n  align-items: center;\n  flex-shrink: 0;\n  width: 16px;\n  height: 16px;\n}\n\n.mcard-parent-icon svg {\n  width: 16px;\n  height: 16px;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-edit-parent-search {\n  width: 100%;\n  border: none;\n  border-radius: 0;\n  padding: 4px 8px;\n  font-size: 12px;\n  outline: none;\n  background: transparent;\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n}\n\n.mcard-edit-parent-search:focus {\n  outline: none;\n}\n\n.mcard-edit-parent-search::placeholder {\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-edit-parent-picker {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  z-index: 100;\n  max-height: 200px;\n  overflow-y: auto;\n  margin-top: 2px;\n}\n\n.mcard-edit-parent-picker-item {\n  padding: 6px 10px;\n  font-size: 12px;\n  cursor: pointer;\n  color: var(--orca-color-text-2, #555);\n  transition: background 0.15s;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-edit-parent-picker-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n.mcard-picker-title {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  line-height: 1.3;\n}\n.mcard-picker-content {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  line-height: 1.3;\n  margin-top: 2px;\n}\n\n.mcard-edit-relation-parent {\n  margin-bottom: 0;\n  border-bottom: none;\n  padding-bottom: 0;\n}\n\n.mcard-edit-relation svg {\n  width: 16px;\n  height: 16px;\n  color: var(--orca-color-gray-5, #999);\n  flex-shrink: 0;\n}\n\n.mcard-edit-relation-info {\n  flex: 0 1 auto;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-size: 12px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  line-height: 1;\n}\n\n.mcard-edit-relation-remove {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  border-radius: 4px;\n  color: var(--orca-color-gray-5, #999);\n  opacity: 0.5;\n  transition: all 0.15s;\n  display: flex;\n  align-items: center;\n  flex-shrink: 0;\n}\n\n.mcard-edit-relation-remove:hover {\n  opacity: 1;\n  color: var(--orca-color-error, #e53935);\n  background: color-mix(in srgb, var(--orca-color-error, #e53935) 10%, transparent);\n}\n\n.mcard-edit-relation-remove svg {\n  width: 14px;\n  height: 14px;\n}\n\n/* @ 提及/引用选择器 */\n.mcard-mention-picker {\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  border-radius: 8px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);\n  min-width: 280px;\n  max-width: 360px;\n  max-height: 320px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  z-index: 99999;\n}\n\n.mcard-mention-picker-list {\n  max-height: 320px;\n  overflow-y: auto;\n  padding: 4px 0;\n}\n\n.mcard-mention-picker-item {\n  padding: 10px 14px;\n  cursor: pointer;\n  transition: background 0.15s;\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n}\n\n.mcard-mention-picker-item:last-child {\n  border-bottom: none;\n}\n\n.mcard-mention-picker-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-mention-picker-date {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-bottom: 4px;\n}\n\n.mcard-mention-picker-preview {\n  font-size: 14px;\n  color: var(--orca-color-text-1, #333);\n  line-height: 1.4;\n  word-break: break-word;\n}\n\n.mcard-mention-picker-title {\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  line-height: 1.5;\n  word-break: break-word;\n}\n\n.mcard-mention-picker-empty {\n  padding: 20px;\n  text-align: center;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 13px;\n}\n\n.mcard-mention-highlight {\n  background-color: #ffeb3b;\n  color: #000;\n  border-radius: 2px;\n  padding: 0 1px;\n}\n\n/* 内容中的 @ 引用 */\n.mcard-memo-ref {\n  display: inline;\n  padding: 1px 4px;\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4285f4) 12%, transparent);\n  color: var(--orca-color-primary-5, #4285f4);\n  border-radius: 3px;\n  font-size: inherit;\n  cursor: pointer;\n  margin: 0 1px;\n  transition: background 0.2s;\n  line-height: inherit;\n  white-space: nowrap;\n  word-break: break-all;\n}\n\n.mcard-memo-ref:hover {\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4285f4) 30%, transparent);\n}\n\n/* ========== Flomo 同步面板 ========== */\n.mcard-flomo-panel {\n  padding: 20px 24px;\n  overflow-y: auto;\n  height: 100%;\n  box-sizing: border-box;\n  max-width: 720px;\n}\n\n.mcard-flomo-card {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 18px 20px;\n  margin-bottom: 14px;\n}\n\n.mcard-flomo-card.disabled {\n  opacity: 0.5;\n  pointer-events: none;\n}\n\n.mcard-flomo-card-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 16px;\n}\n\n.mcard-flomo-card-title {\n  font-size: 15px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-flomo-card-desc {\n  font-size: 13px;\n  color: var(--orca-color-gray-5, #999);\n  margin-top: 2px;\n}\n\n.mcard-flomo-badge {\n  padding: 4px 10px;\n  border-radius: 12px;\n  font-size: 12px;\n  font-weight: 600;\n  background: #f5f5f5;\n  color: #888;\n}\n\n.mcard-flomo-badge.success {\n  background: #40c463;\n  color: #fff;\n}\n\n.mcard-flomo-form-row {\n  margin-bottom: 12px;\n}\n\n.mcard-flomo-form-label {\n  display: block;\n  font-size: 13px;\n  margin-bottom: 6px;\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-flomo-input {\n  width: 100%;\n  padding: 8px 12px;\n  min-height: 36px;\n  font-size: 13px;\n  border-radius: 6px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  box-sizing: border-box;\n  font-family: inherit;\n}\n\n.mcard-flomo-input:focus {\n  outline: none;\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-flomo-input:disabled {\n  opacity: 0.7;\n  cursor: not-allowed;\n}\n\n.mcard-flomo-readonly {\n  padding: 8px 12px;\n  min-height: 36px;\n  font-size: 13px;\n  border-radius: 6px;\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 50%, transparent);\n  color: var(--orca-color-text-2, #555);\n  display: flex;\n  align-items: center;\n}\n\n.mcard-flomo-checkbox-label {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n  cursor: pointer;\n}\n\n.mcard-flomo-checkbox-label input[type="checkbox"] {\n  width: 16px;\n  height: 16px;\n  cursor: pointer;\n}\n\n.mcard-flomo-form-actions {\n  display: flex;\n  gap: 10px;\n}\n\n.mcard-flomo-btn {\n  padding: 8px 16px;\n  font-size: 13px;\n  border-radius: 6px;\n  border: none;\n  cursor: pointer;\n  font-family: inherit;\n  transition: opacity 0.2s;\n}\n\n.mcard-flomo-btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.mcard-flomo-btn-primary {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #fff;\n}\n\n.mcard-flomo-btn-secondary {\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 80%, transparent);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-flomo-message {\n  margin-top: 10px;\n  padding: 8px 12px;\n  font-size: 13px;\n  border-radius: 6px;\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 50%, transparent);\n  color: var(--orca-color-text-2, #555);\n}\n\n/* ========== 卡片详情面板 ========== */\n/* ========== 卡片详情弹窗 ========== */\n.mcard-detail-overlay {\n  position: absolute;\n  inset: 0;\n  z-index: 10000;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding-top: 5vh;\n  background: rgba(0, 0, 0, 0.4);\n  backdrop-filter: blur(4px);\n  animation: mcard-detail-fade-in 0.2s ease;\n}\n\n@keyframes mcard-detail-fade-in {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n.mcard-detail-panel {\n  width: 620px;\n  max-width: 90vw;\n  max-height: 90vh;\n  background: var(--mcard-bg, #fff);\n  border-radius: 12px;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);\n  animation: mcard-detail-pop-in 0.2s ease;\n  overflow: hidden;\n}\n\n@keyframes mcard-detail-pop-in {\n  from { transform: translateY(20px); opacity: 0; }\n  to { transform: translateY(0); opacity: 1; }\n}\n\n.mcard-detail-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 20px;\n  border-bottom: 1px solid var(--mcard-border, #f0f0f0);\n  flex-shrink: 0;\n}\n\n.mcard-detail-back {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: none;\n  border: none;\n  color: #666;\n  font-size: 14px;\n  cursor: pointer;\n  padding: 6px 10px;\n  border-radius: 6px;\n  transition: background 0.15s, color 0.15s;\n}\n\n.mcard-detail-back:hover {\n  background: var(--mcard-hover-bg, #f5f5f5);\n  color: #333;\n}\n\n.mcard-detail-back svg {\n  width: 18px;\n  height: 18px;\n}\n\n.mcard-detail-meta {\n  font-size: 12px;\n  color: #999;\n}\n\n.mcard-detail-edited {\n  margin-left: 6px;\n  color: #bbb;\n}\n\n.mcard-detail-action-btn {\n  padding: 6px 14px;\n  border-radius: 6px;\n  border: 1px solid var(--mcard-border, #e0e0e0);\n  background: var(--mcard-bg, #fff);\n  color: #666;\n  font-size: 12px;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n\n.mcard-detail-action-btn:hover {\n  background: var(--mcard-hover-bg, #f5f5f5);\n  border-color: #ccc;\n}\n\n.mcard-detail-action-btn.danger {\n  color: #e53935;\n  border-color: #ffcdd2;\n}\n\n.mcard-detail-action-btn.danger:hover {\n  background: #fff5f5;\n  border-color: #e53935;\n}\n\n/* 详情弹窗区块 */\n.mcard-detail-section {\n  padding: 0 20px;\n  flex-shrink: 0;\n}\n\n.mcard-detail-section + .mcard-detail-section {\n  border-top: 1px solid var(--mcard-border, #f0f0f0);\n}\n\n.mcard-detail-section-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: #999;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  padding: 12px 0 8px;\n}\n\n.mcard-detail-section-label-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 0 8px;\n}\n\n.mcard-detail-section-label-row .mcard-detail-section-label {\n  padding: 0;\n}\n\n.mcard-view-toggle {\n  background: none;\n  border: 1px solid var(--mcard-border, #e0e0e0);\n  border-radius: 4px;\n  cursor: pointer;\n  padding: 3px 5px;\n  display: flex;\n  align-items: center;\n  color: #999;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n\n.mcard-view-toggle:hover {\n  background: var(--mcard-hover-bg, #f5f5f5);\n  color: #666;\n}\n\n/* 父级引用区 */\n.mcard-detail-parents {\n  padding-top: 8px;\n  padding-bottom: 8px;\n}\n\n/* 卡片区 */\n.mcard-detail-card {\n  padding-top: 16px;\n  padding-bottom: 16px;\n  cursor: default;\n  flex-shrink: 0;\n}\n\n.mcard-detail-card-edit {\n  padding-top: 12px;\n  padding-bottom: 8px;\n  flex-shrink: 0;\n}\n\n.mcard-detail-content {\n  font-size: 15px;\n  line-height: 1.8;\n  color: var(--mcard-text, #333);\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  min-height: 100px;\n}\n\n.mcard-detail-content img {\n  max-width: 100%;\n  border-radius: 8px;\n  margin: 8px 0;\n  cursor: pointer;\n}\n\n.mcard-detail-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-top: 12px;\n}\n\n.mcard-detail-tag {\n  display: inline-block;\n  padding: 3px 10px;\n  border-radius: 12px;\n  font-size: 12px;\n  background: var(--mcard-tag-bg, #f0f5ff);\n  color: var(--mcard-accent, #4a90d9);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n\n.mcard-detail-tag:hover {\n  opacity: 0.8;\n}\n\n.mcard-detail-tag-active {\n  background: var(--mcard-accent, #4a90d9);\n  color: #fff;\n}\n\n.mcard-detail-tag-excluded {\n  background: #fde8e8;\n  color: #d32f2f;\n  text-decoration: line-through;\n  opacity: 0.7;\n}\n\n/* 子级标签 */\n.mcard-detail-child-tags {\n  flex-shrink: 0;\n}\n\n.mcard-detail-child-tags-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding-bottom: 12px;\n}\n\n/* 子级卡片列表 - 可滚动 */\n.mcard-detail-child-cards {\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n}\n\n.mcard-detail-child-cards-list {\n  flex: 1;\n  overflow-y: auto;\n  padding-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n\n.mcard-detail-child-cards-list.mcard-child-grid {\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.mcard-detail-child-cards-list.mcard-child-grid .mcard-detail-child-card {\n  width: calc(33.33% - 7px);\n  min-width: 0;\n  box-sizing: border-box;\n}\n\n.mcard-detail-child-card {\n  background: var(--mcard-surface, #f8f9fa);\n  border-radius: 8px;\n  padding: 12px 14px;\n  cursor: pointer;\n  transition: background 0.15s;\n  border: 1px solid var(--mcard-border, #eee);\n}\n\n.mcard-detail-child-card:hover {\n  background: var(--mcard-hover-bg, #f0f0f0);\n}\n\n.mcard-detail-child-card-title {\n  font-weight: 600;\n  font-size: 14px;\n  margin-bottom: 4px;\n  color: var(--mcard-text, #333);\n}\n\n.mcard-detail-child-card-content {\n  font-size: 13px;\n  line-height: 1.6;\n  color: var(--mcard-text-secondary, #555);\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  word-wrap: break-word;\n  word-break: break-word;\n}\n\n.mcard-detail-child-card-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 8px;\n  gap: 8px;\n}\n\n.mcard-detail-child-card-date {\n  font-size: 11px;\n  color: #999;\n  flex-shrink: 0;\n}\n\n.mcard-detail-child-card-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n\n.mcard-detail-empty {\n  text-align: center;\n  padding: 24px 0;\n  color: #999;\n  font-size: 13px;\n}\n\n/* ========== 卡片内联编辑 ========== */\n.mcard-inline-edit {\n  margin-bottom: 0;\n}\n\n.mcard-inline-edit .mcard-input-field {\n  min-height: 100px;\n  max-height: 400px;\n}\n\n.mcard-edit-title-input {\n  width: 100%;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 16px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n  padding: 0 0 2px;\n  margin-bottom: 0;\n}\n\n.mcard-edit-title-input::placeholder {\n  color: var(--orca-color-gray-5, #999);\n  font-weight: 400;\n}\n\n.mcard-note-title {\n  font-size: 17px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 4px;\n  line-height: 1.4;\n}\n\n.mcard-inline-edit-cancel {\n  padding: 4px 10px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n  background: transparent;\n  border: none;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: background 0.15s;\n  font-family: inherit;\n}\n\n.mcard-inline-edit-cancel:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n/* ========== 提及选择器 ========== */\n.mcard-mention-picker {\n  background: var(--orca-color-bg-2, #fff);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  min-width: 260px;\n  max-width: 320px;\n  max-height: 300px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  margin-top: 4px;\n  z-index: 100;\n}\n\n.mcard-mention-picker-search {\n  padding: 8px;\n  border-bottom: 1px solid var(--orca-color-gray-3, #e0e0e0);\n}\n\n.mcard-mention-picker-search input {\n  width: 100%;\n  box-sizing: border-box;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 4px;\n  padding: 6px 8px;\n  font-size: 13px;\n  outline: none;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n}\n\n.mcard-mention-picker-search input:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-mention-picker-list {\n  overflow-y: auto;\n  flex: 1;\n}\n\n.mcard-mention-picker-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  padding: 8px 12px;\n  cursor: pointer;\n  border-bottom: 1px solid var(--orca-color-bg-2-light, #f0f0f0);\n  transition: background 0.1s;\n}\n\n.mcard-mention-picker-item:last-child {\n  border-bottom: none;\n}\n\n.mcard-mention-picker-item:hover,\n.mcard-mention-picker-item.active {\n  background: var(--orca-color-gray-1, #f5f5f5);\n}\n\n.mcard-mention-picker-date {\n  font-size: 11px;\n  color: var(--orca-color-text-2-light, #999);\n}\n\n.mcard-mention-picker-preview {\n  font-size: 13px;\n  color: var(--orca-color-text-1, #333);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-mention-picker-empty {\n  padding: 20px;\n  text-align: center;\n  font-size: 13px;\n  color: var(--orca-color-text-2-light, #999);\n}\n';
+const mcardStyles = '/* ========== 三栏布局容器 ========== */\n.inbox-webview {\n  display: none;\n  width: 0;\n  height: 1px;\n}\n.mcard-shell {\n  display: flex;\n  height: 100%;\n  width: 100%;\n  min-height: 0;\n  overflow: hidden;\n  background: var(--orca-color-bg-1, #ffffff);\n  font-family: inherit;\n  color: var(--orca-color-text-1, #333333);\n}\n\n/* ========== 最左侧图标导航栏 ========== */\n.mcard-sidebar {\n  width: 64px;\n  background: var(--orca-color-bg-1, #fff);\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 10px 0 16px;\n  flex-shrink: 0;\n  height: 100%;\n}\n\n.mcard-sidebar-toggle {\n  width: 36px;\n  height: 36px;\n  border-radius: 8px;\n  margin-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  flex-shrink: 0;\n  padding: 0;\n  transition: background 0.2s;\n}\n\n.mcard-sidebar-toggle:hover {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n}\n\n.mcard-hamburger-line {\n  display: block;\n  width: 18px;\n  height: 2px;\n  border-radius: 2px;\n  background: #666;\n}\n\n.mcard-sidebar-nav {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  flex: 1;\n  width: 100%;\n  padding: 0 8px;\n}\n\n.mcard-nav-item {\n  width: 48px;\n  height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  border-radius: 10px;\n  position: relative;\n  transition: all 0.2s ease;\n  color: var(--orca-color-text-2, #555);\n  background: transparent;\n  border: none;\n  font-size: 20px;\n  margin: 0 auto;\n}\n\n.mcard-nav-item:hover {\n  background: var(--orca-color-bg-2, #f9f9f9);\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-nav-item.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 15%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-nav-item.active::before {\n  content: "";\n  position: absolute;\n  left: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 3px;\n  height: 22px;\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  border-radius: 0 3px 3px 0;\n}\n\n.mcard-nav-tooltip {\n  position: absolute;\n  left: calc(100% + 8px);\n  top: 50%;\n  transform: translateY(-50%);\n  background: var(--orca-color-text-2, #555);\n  color: var(--orca-color-bg-2, #f5f5f5);\n  font-size: 12px;\n  padding: 4px 8px;\n  border-radius: 4px;\n  white-space: nowrap;\n  pointer-events: none;\n  opacity: 0;\n  transition: opacity 0.15s ease;\n  z-index: 10;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n}\n\n.mcard-nav-item:hover .mcard-nav-tooltip {\n  opacity: 1;\n}\n\n.mcard-sidebar-bottom {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding-top: 10px;\n  border-top: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  margin-top: 4px;\n  width: 100%;\n}\n\n/* ========== 中间信息侧栏 ========== */\n.mcard-info-sidebar {\n  width: 240px;\n  background: var(--orca-color-bg-1, #fff);\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  padding: 12px 16px 16px;\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex-shrink: 0;\n  min-height: 0;\n  scrollbar-width: thin;\n  transition: width 0.25s ease, padding 0.25s ease, opacity 0.2s ease;\n}\n\n.mcard-info-sidebar.collapsed {\n  width: 0;\n  padding: 0;\n  opacity: 0;\n  overflow: hidden;\n  border-right: none;\n}\n\n.mcard-info-sidebar::-webkit-scrollbar {\n  width: 4px;\n}\n\n.mcard-info-sidebar::-webkit-scrollbar-thumb {\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 50%, transparent);\n  border-radius: 2px;\n}\n\n/* 搜索栏 */\n.mcard-main > .mcard-search-box {\n  margin: 8px 24px 0;\n  flex-shrink: 0;\n}\n\n.mcard-search-box {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 10px;\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 8px;\n  margin-bottom: 12px;\n  transition: border-color 0.15s ease;\n}\n\n.mcard-search-box:focus-within {\n  border-color: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 40%, var(--orca-color-gray-3, #e0e0e0));\n}\n\n.mcard-search-input {\n  flex: 1;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 13px;\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n  min-width: 0;\n}\n\n.mcard-search-input::placeholder {\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-close-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: none;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 8px;\n  cursor: pointer;\n  color: var(--orca-color-gray-5, #999);\n  padding: 0 10px;\n  height: 32px;\n  flex-shrink: 0;\n  transition: color 0.15s, background 0.15s, border-color 0.15s;\n}\n\n.mcard-close-btn:hover {\n  color: var(--orca-color-text-1, #333);\n  background: var(--orca-color-bg-3, #f0f0f0);\n  border-color: var(--orca-color-gray-4, #ccc);\n}\n\n/* 统计 */\n.mcard-stats {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 14px;\n  padding: 0 4px;\n}\n\n.mcard-stat-item {\n  text-align: center;\n  flex: 1;\n}\n\n.mcard-stat-num {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  margin-bottom: 2px;\n  line-height: 1.2;\n}\n\n.mcard-stat-label {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* ========== 信息栏热力图 ========== */\n.mcard-heatmap-container {\n  margin-bottom: 20px;\n  position: relative;\n  overflow: visible;\n  flex-shrink: 0;\n}\n\n.mcard-heatmap {\n  display: grid;\n  grid-template-columns: repeat(12, 1fr);\n  grid-template-rows: repeat(7, 1fr);\n  gap: 4px;\n  margin-bottom: 8px;\n}\n\n.mcard-heatmap-cell {\n  width: 100%;\n  aspect-ratio: 1;\n  background-color: #ebedf0;\n  border-radius: 5px;\n  cursor: pointer;\n  position: relative;\n  transition: all 0.2s;\n}\n\n.mcard-heatmap-cell.level-1 {\n  background-color: #9be9a8;\n}\n\n.mcard-heatmap-cell.level-2 {\n  background-color: #40c463;\n}\n\n.mcard-heatmap-cell.level-3 {\n  background-color: #30a14e;\n}\n\n.mcard-heatmap-cell.level-4 {\n  background-color: #216e39;\n}\n\n.mcard-heatmap-cell:hover {\n  transform: scale(1.1);\n  box-shadow: 0 0 0 2px #40c463;\n}\n\n.mcard-heatmap-cell.selected {\n  box-shadow: 0 0 0 2px #216e39;\n}\n\n.mcard-heatmap-months {\n  display: grid;\n  grid-template-columns: repeat(12, 1fr);\n  gap: 3px;\n  margin-top: 6px;\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-heatmap-months span {\n  text-align: left;\n  white-space: nowrap;\n}\n\n/* 菜单项（全部笔记、每日回顾等） */\n.mcard-menu-list {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  margin-bottom: 14px;\n}\n\n.mcard-menu-item {\n  display: flex;\n  align-items: center;\n  padding: 8px 10px;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  color: var(--orca-color-text-2, #555);\n  border: none;\n  background: transparent;\n  font-family: inherit;\n  font-size: 13px;\n  text-align: left;\n  width: 100%;\n}\n\n.mcard-menu-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-menu-item.active {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n  font-weight: 500;\n}\n\n.mcard-menu-icon {\n  margin-right: 10px;\n  font-size: 15px;\n  width: 20px;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n\n.mcard-menu-text {\n  flex: 1;\n  line-height: 1.3;\n}\n\n.mcard-menu-count {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  font-variant-numeric: tabular-nums;\n  margin-left: 6px;\n}\n\n.mcard-menu-item.active .mcard-menu-count {\n  color: #ffffff;\n  opacity: 0.85;\n}\n\n/* 段落标题 */\n.mcard-section-title {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  margin: 10px 0 6px;\n  padding: 0 4px;\n  letter-spacing: 0.02em;\n}\n\n/* 标签列表 */\n.mcard-tag-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 5px;\n  padding: 0 4px;\n  margin-bottom: 14px;\n}\n\n.mcard-tag-chip {\n  font-size: 12px;\n  padding: 3px 9px;\n  border-radius: 12px;\n  border: 1px solid var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  cursor: pointer;\n  background: var(--orca-color-bg-2, #f5f5f5);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  transition: all 0.15s ease;\n  font-family: inherit;\n  display: inline-flex;\n  align-items: center;\n  gap: 3px;\n}\n\n.mcard-tag-chip:hover {\n  transform: translateY(-1px);\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);\n}\n\n.mcard-tag-chip.active {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n  font-weight: 600;\n}\n\n.mcard-tag-chip-count {\n  font-size: 11px;\n  opacity: 0.7;\n}\n\n.mcard-tag-chip.pinned {\n  border-color: #e8a735;\n  background: #fff8e8;\n  color: #b8860b;\n}\n\n.mcard-tag-pin-icon {\n  font-size: 10px;\n  margin-right: 1px;\n}\n\n/* 标签右键菜单 */\n.mcard-tag-menu-overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 10000;\n  background: transparent;\n}\n\n.mcard-tag-menu-dropdown {\n  position: fixed;\n  background: #ffffff;\n  border: 1px solid #e0e0e0;\n  border-radius: 8px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);\n  padding: 4px 0;\n  min-width: 160px;\n  z-index: 10001;\n}\n\n.mcard-tag-menu-item {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 14px;\n  cursor: pointer;\n  font-size: 13px;\n  color: #333;\n  transition: background 0.15s;\n}\n\n.mcard-tag-menu-item:hover {\n  background: #f5f5f5;\n}\n\n.mcard-tag-menu-item.danger {\n  color: #e53935;\n}\n\n.mcard-tag-menu-item.danger:hover {\n  background: #fef0f0;\n}\n\n.mcard-tag-menu-icon {\n  font-size: 14px;\n  width: 20px;\n  text-align: center;\n}\n\n/* 重命名标签弹窗 */\n.mcard-tag-rename-modal {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: #ffffff;\n  border-radius: 12px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);\n  padding: 24px;\n  min-width: 320px;\n  z-index: 10002;\n}\n\n.mcard-tag-rename-title {\n  font-size: 16px;\n  font-weight: 600;\n  color: #333;\n  margin-bottom: 14px;\n}\n\n.mcard-tag-rename-input {\n  width: 100%;\n  padding: 8px 12px;\n  border: 1px solid #e0e0e0;\n  border-radius: 6px;\n  font-size: 14px;\n  outline: none;\n  transition: border-color 0.2s;\n  box-sizing: border-box;\n}\n\n.mcard-tag-rename-input:focus {\n  border-color: #4a90d9;\n}\n\n.mcard-tag-rename-hint {\n  font-size: 12px;\n  color: #999;\n  margin-top: 8px;\n  margin-bottom: 16px;\n}\n\n.mcard-tag-rename-actions {\n  display: flex;\n  gap: 8px;\n  justify-content: flex-end;\n}\n\n.mcard-tag-rename-cancel {\n  padding: 6px 16px;\n  border: 1px solid #e0e0e0;\n  border-radius: 6px;\n  background: #fff;\n  color: #666;\n  cursor: pointer;\n  font-size: 13px;\n}\n\n.mcard-tag-rename-cancel:hover {\n  background: #f5f5f5;\n}\n\n.mcard-tag-rename-save {\n  padding: 6px 16px;\n  border: none;\n  border-radius: 6px;\n  background: #4a90d9;\n  color: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n\n.mcard-tag-rename-save:hover {\n  background: #3a7bc8;\n}\n\n.mcard-tag-rename-danger {\n  padding: 6px 16px;\n  border: none;\n  border-radius: 6px;\n  background: #e53935;\n  color: #fff;\n  cursor: pointer;\n  font-size: 13px;\n}\n\n.mcard-tag-rename-danger:hover {\n  background: #c62828;\n}\n\n.mcard-filter-bar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 8px 12px;\n  margin-bottom: 12px;\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 8%, transparent);\n  border: 1px solid color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 30%, transparent);\n  border-radius: 8px;\n  font-size: 12px;\n}\n\n.mcard-filter-label {\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-filter-clear {\n  background: transparent;\n  border: none;\n  color: var(--orca-color-primary-5, #4a90d9);\n  font-size: 12px;\n  cursor: pointer;\n  padding: 2px 6px;\n  border-radius: 4px;\n  transition: background 0.15s;\n}\n\n.mcard-filter-clear:hover {\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 15%, transparent);\n}\n\n/* ========== 右侧主内容区 ========== */\n.mcard-main {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background: var(--orca-color-bg-1, #fff);\n  overflow: hidden;\n  min-width: 0;\n  min-height: 0;\n  height: 100%;\n}\n\n/* 输入区 */\n.mcard-input-area {\n  padding: 8px 24px 16px;\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  flex-shrink: 0;\n  background: var(--orca-color-bg-1, #fff);\n}\n\n.mcard-input-box {\n  background-color: var(--orca-color-bg-1, #fff);\n  border: 1px solid #cccccc;\n  border-radius: 6px;\n  padding: 12px 16px;\n  transition: all 0.3s ease;\n  position: relative;\n}\n\n.mcard-input-box.focused {\n  border-color: var(--orca-color-primary-5, #4a90d9);\n  box-shadow: 0 0 0 3px color-mix(in srgb, var(--orca-color-primary-5, #4a90d9) 15%, transparent);\n  background-color: var(--orca-color-bg-1, #fff);\n}\n\n.mcard-input-wrapper {\n  position: relative;\n  margin-bottom: 12px;\n  overflow: visible;\n}\n\n.mcard-input-field {\n  width: 100%;\n  min-height: 80px;\n  max-height: 240px;\n  border: none;\n  outline: none;\n  background: transparent;\n  color: var(--orca-color-text-1, #333);\n  font-size: var(--mcard-font-size, 14.5px);\n  line-height: 1.8;\n  font-family: inherit;\n  resize: none;\n  overflow-y: auto;\n  scrollbar-width: none;\n}\n\n.mcard-input-field::-webkit-scrollbar {\n  display: none;\n}\n\n.mcard-input-field::placeholder {\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-input-toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-top: 10px;\n}\n\n.mcard-toolbar-left {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n\n.mcard-toolbar-icon {\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 14px;\n  width: 28px;\n  height: 28px;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n}\n\n.mcard-toolbar-icon svg {\n  width: 16px;\n  height: 16px;\n}\n\n.mcard-toolbar-icon:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-send-btn {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n  border: none;\n  border-radius: 8px;\n  width: 32px;\n  height: 32px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n}\n\n.mcard-send-btn svg {\n  width: 18px;\n  height: 18px;\n}\n\n.mcard-send-btn:hover:not(:disabled) {\n  opacity: 0.9;\n  transform: scale(1.05);\n}\n\n.mcard-send-btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.mcard-tag-picker {\n  position: absolute;\n  left: 80px;\n  width: 260px;\n  background: #ffffff;\n  border: 1px solid #e0e0e0;\n  border-radius: 8px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);\n  z-index: 200;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n}\n\n.mcard-tag-picker-title {\n  padding: 6px 10px;\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  border-bottom: 1px solid #eeeeee;\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 50%, transparent);\n}\n\n.mcard-tag-picker-search {\n  width: 100%;\n  border: none;\n  outline: none;\n  background: transparent;\n  padding: 8px 12px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  box-sizing: border-box;\n}\n\n.mcard-tag-picker-list {\n  max-height: 220px;\n  overflow-y: auto;\n  scrollbar-width: thin;\n}\n\n.mcard-tag-picker-item {\n  padding: 6px 10px;\n  cursor: pointer;\n  transition: background 0.15s;\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  gap: 2px;\n}\n\n.mcard-tag-picker-item:hover,\n.mcard-tag-picker-item.active {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-tag-picker-item-hash {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 600;\n}\n\n.mcard-tag-picker-item-name {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 500;\n}\n\n/* 笔记列表（平铺） */\n.mcard-notes-list {\n  flex: 1;\n  overflow-y: auto;\n  padding: 16px 24px;\n  scrollbar-width: thin;\n  min-height: 0;\n}\n\n.mcard-notes-list::-webkit-scrollbar {\n  width: 6px;\n}\n\n.mcard-notes-list::-webkit-scrollbar-thumb {\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 50%, transparent);\n  border-radius: 3px;\n}\n\n.mcard-date-group {\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  margin: 12px 0 10px;\n  padding: 0 4px;\n  letter-spacing: 0.01em;\n}\n\n.mcard-note-card {\n  position: relative;\n  background-color: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 30%, transparent);\n  border: 1px solid #cccccc;\n  border-radius: 6px;\n  padding: 14px;\n  margin-bottom: 16px;\n  transition: all 0.2s;\n  cursor: pointer;\n  width: 100%;\n  box-sizing: border-box;\n  overflow: visible;\n  user-select: text;\n  -webkit-user-select: text;\n}\n\n.mcard-note-card:hover {\n  border-color: var(--orca-color-primary-5, #4a90d9);\n  box-shadow: 0 2px 8px color-mix(in srgb, var(--orca-color-gray-5, #999) 12%, transparent);\n}\n\n.mcard-note-card.pinned {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  background-color: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 5%, transparent);\n}\n\n.mcard-note-card.pinned::before {\n  content: "📌";\n  position: absolute;\n  top: 6px;\n  right: 6px;\n  font-size: 10px;\n  opacity: 0.6;\n}\n\n.mcard-note-image {\n  max-width: 100%;\n  max-height: 300px;\n  border-radius: 8px;\n  margin: 6px 0;\n  display: block;\n  cursor: zoom-in;\n  object-fit: contain;\n}\n\n/* 图片画廊 */\n.mcard-gallery-header {\n  padding: 16px 16px 8px;\n}\n\n.mcard-gallery-header-top {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  margin-bottom: 8px;\n}\n\n.mcard-gallery-header-title {\n  font-size: 18px;\n  font-weight: 600;\n  color: #333;\n}\n\n.mcard-gallery-header-meta {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: #999;\n}\n\n.mcard-gallery-header-dot {\n  opacity: 0.5;\n}\n\n.mcard-gallery-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 8px;\n}\n\n.mcard-gallery-tag-chip {\n  padding: 3px 10px;\n  border-radius: 12px;\n  font-size: 12px;\n  color: #666;\n  background: #f0f0f0;\n  cursor: pointer;\n  transition: all 0.2s;\n  user-select: none;\n}\n\n.mcard-gallery-tag-chip:hover {\n  background: #e0e0e0;\n}\n\n.mcard-gallery-tag-chip.active {\n  background: #4a90d9;\n  color: #fff;\n}\n\n.mcard-gallery-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));\n  gap: 8px;\n  padding: 12px;\n}\n\n.mcard-gallery-item {\n  aspect-ratio: 1;\n  overflow: hidden;\n  border-radius: 8px;\n  cursor: pointer;\n  background: #f5f5f5;\n  position: relative;\n}\n\n.mcard-gallery-img-wrapper {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n\n.mcard-gallery-item img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 0.2s;\n}\n\n.mcard-gallery-item:hover img {\n  transform: scale(1.05);\n}\n\n.mcard-gallery-overlay {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  padding: 8px;\n  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 60%);\n  opacity: 0;\n  transition: opacity 0.2s;\n  pointer-events: none;\n}\n\n.mcard-gallery-item:hover .mcard-gallery-overlay {\n  opacity: 1;\n}\n\n.mcard-gallery-overlay-tags {\n  color: #8cc8ff;\n  font-size: 11px;\n  margin-bottom: 4px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-gallery-overlay-text {\n  color: rgba(255, 255, 255, 0.9);\n  font-size: 12px;\n  line-height: 1.4;\n  margin-bottom: 4px;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n\n.mcard-gallery-overlay-date {\n  color: rgba(255, 255, 255, 0.6);\n  font-size: 10px;\n}\n\n/* 卡片闪烁高亮 */\n.mcard-note-card-flash {\n  animation: mcard-card-flash 2s ease-out;\n}\n\n@keyframes mcard-card-flash {\n  0% { background-color: rgba(74, 144, 217, 0.3); }\n  100% { background-color: transparent; }\n}\n\n/* 图片预览模态框 */\n.mcard-image-preview-modal {\n  position: fixed;\n  inset: 0;\n  z-index: 99999;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.mcard-image-preview-overlay {\n  position: absolute;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.9);\n}\n\n.mcard-image-preview-toolbar {\n  position: absolute;\n  top: 16px;\n  right: 16px;\n  z-index: 2;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.mcard-image-preview-close {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.15);\n  color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n\n.mcard-image-preview-close:hover {\n  background: rgba(255, 255, 255, 0.3);\n}\n\n.mcard-image-preview-container {\n  position: relative;\n  z-index: 1;\n  max-width: 90vw;\n  max-height: 90vh;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.mcard-image-preview-img {\n  max-width: none;\n  max-height: none;\n  user-select: none;\n  transform-origin: center center;\n  transition: transform 0.05s ease-out;\n}\n\n.mcard-image-preview-img.dragging {\n  cursor: grabbing;\n  transition: none;\n}\n\n.mcard-image-preview-hint {\n  position: absolute;\n  bottom: 24px;\n  left: 50%;\n  transform: translateX(-50%);\n  color: rgba(255, 255, 255, 0.6);\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 12px;\n  background: rgba(0, 0, 0, 0.4);\n  opacity: 0;\n  transition: opacity 0.3s;\n  pointer-events: none;\n  white-space: nowrap;\n}\n\n.mcard-image-preview-hint.show {\n  opacity: 1;\n}\n\n.mcard-note-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 0;\n  overflow: hidden;\n}\n\n.mcard-note-actions {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  flex-shrink: 0;\n  opacity: 0;\n  transition: opacity 0.2s;\n  position: relative;\n  pointer-events: auto;\n}\n\n.mcard-note-card:hover .mcard-note-actions,\n.mcard-note-actions:focus-within {\n  opacity: 1;\n  pointer-events: auto;\n}\n\n.mcard-note-menu-btn {\n  color: var(--orca-color-gray-5, #999);\n  cursor: pointer;\n  font-size: 14px;\n  width: 28px;\n  height: 28px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  transition: all 0.15s ease;\n  background: transparent;\n  border: none;\n  padding: 0;\n  outline: none;\n  -webkit-appearance: none;\n  appearance: none;\n  line-height: 0;\n  font-family: inherit;\n  pointer-events: auto;\n}\n\n.mcard-note-menu-btn svg {\n  width: 18px;\n  height: 18px;\n  display: block;\n  pointer-events: none;\n}\n\n.mcard-note-menu-btn:hover {\n  background: color-mix(in srgb, var(--orca-color-text-2, #555) 8%, transparent);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-note-menu-btn:active {\n  background: color-mix(in srgb, var(--orca-color-text-2, #555) 15%, transparent);\n  transform: scale(0.95);\n}\n\n.mcard-note-menu-dropdown {\n  background: var(--orca-color-bg-2, #ffffff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e5e5e5) 40%, transparent);\n  border-radius: 6px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);\n  min-width: 160px;\n  padding: 5px 0;\n  overflow: hidden;\n  user-select: none;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item {\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #333);\n  cursor: pointer;\n  transition: background 0.12s ease, color 0.12s ease;\n  line-height: 1.4;\n  margin: 0 4px;\n  border-radius: 4px;\n  gap: 0;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item.danger {\n  color: var(--orca-color-error, #e53935);\n}\n\n.mcard-note-menu-dropdown .mcard-menu-item.danger:hover {\n  background: color-mix(in srgb, var(--orca-color-error, #e53935) 10%, transparent);\n}\n\n.mcard-note-menu-dropdown .mcard-menu-icon {\n  width: 16px;\n  height: 16px;\n  margin-right: 8px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  color: inherit;\n  flex-shrink: 0;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-text {\n  flex: 1;\n}\n\n.mcard-note-menu-dropdown .mcard-menu-divider {\n  height: 1px;\n  background: var(--orca-color-gray-3, #e5e5e5);\n  margin: 4px 12px;\n  opacity: 0.6;\n}\n\n.mcard-note-date {\n  font-size: 12px;\n  color: var(--orca-color-text-2, #555);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  flex-shrink: 1;\n  min-width: 0;\n  user-select: text;\n  -webkit-user-select: text;\n}\n\n.mcard-note-menu {\n  color: var(--orca-color-gray-5, #999);\n  cursor: pointer;\n  font-size: 14px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 4px;\n  transition: all 0.2s;\n}\n\n.mcard-note-menu:hover {\n  background-color: var(--orca-color-gray-2, #f0f0f0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-note-menu svg {\n  width: 14px;\n  height: 14px;\n}\n\n.mcard-note-content {\n  font-size: var(--mcard-font-size, 14.5px);\n  line-height: 2;\n  color: var(--orca-color-text-1, #333);\n  margin-top: 6px;\n  margin-bottom: 0px;\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  max-width: 100%;\n  overflow: hidden;\n  user-select: text;\n  -webkit-user-select: text;\n  white-space: pre-wrap;\n}\n\n/* Markdown 渲染内容 */\n.mcard-note-content-rendered {\n  font-size: var(--mcard-font-size, 14.5px);\n  line-height: 1.8;\n  color: #333;\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  user-select: text;\n  -webkit-user-select: text;\n  white-space: normal;\n  display: block;\n}\n\n.mcard-note-content-rendered p {\n  margin: 0 0 8px;\n}\n\n.mcard-note-content-rendered p:last-child {\n  margin-bottom: 0;\n}\n\n.mcard-note-content-rendered h1,\n.mcard-note-content-rendered h2,\n.mcard-note-content-rendered h3,\n.mcard-note-content-rendered h4,\n.mcard-note-content-rendered h5,\n.mcard-note-content-rendered h6 {\n  margin: 12px 0 6px;\n  font-weight: 600;\n  line-height: 1.4;\n}\n\n.mcard-note-content-rendered h1 { font-size: 1.5em; }\n.mcard-note-content-rendered h2 { font-size: 1.3em; }\n.mcard-note-content-rendered h3 { font-size: 1.15em; }\n.mcard-note-content-rendered h4 { font-size: 1em; }\n.mcard-note-content-rendered h5 { font-size: 0.9em; }\n.mcard-note-content-rendered h6 { font-size: 0.85em; color: #999; }\n\n.mcard-note-content-rendered ul,\n.mcard-note-content-rendered ol {\n  margin: 4px 0 8px;\n  padding-left: 0;\n  list-style-type: none;\n  display: block;\n}\n\n.mcard-note-content-rendered ol {\n  counter-reset: list-counter;\n}\n\n.mcard-note-content-rendered li {\n  position: relative;\n  padding-left: 20px;\n  margin: 2px 0;\n  display: block;\n}\n\n.mcard-note-content-rendered ol li {\n  counter-increment: list-counter;\n}\n\n.mcard-note-content-rendered ol li::before {\n  content: counter(list-counter) ".";\n  position: absolute;\n  top: 0;\n  left: 0;\n  color: #999;\n  font-size: inherit;\n}\n\n.mcard-note-content-rendered ul li:not(.task-item)::before {\n  content: "";\n  position: absolute;\n  top: 50%;\n  left: 0;\n  height: 6px;\n  width: 6px;\n  margin-top: -5px;\n  border-radius: 50%;\n  background-color: #999;\n}\n\n.mcard-note-content-rendered .task-list {\n  list-style: none;\n  padding-left: 4px;\n}\n\n.mcard-note-content-rendered .task-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n}\n\n.mcard-note-content-rendered .mcard-task-checkbox {\n  margin-top: 4px;\n  cursor: default;\n}\n\n.mcard-note-content-rendered blockquote {\n  margin: 8px 0;\n  padding: 8px 12px;\n  border-left: 3px solid #4a90d9;\n  background: #f9f9f9;\n  border-radius: 0 4px 4px 0;\n  color: #666;\n}\n\n.mcard-note-content-rendered blockquote p:last-child {\n  margin-bottom: 0;\n}\n\n.mcard-note-content-rendered pre {\n  margin: 8px 0;\n  padding: 12px;\n  background: #f5f5f5;\n  border-radius: 6px;\n  overflow-x: auto;\n  font-size: 0.9em;\n  line-height: 1.5;\n}\n\n.mcard-note-content-rendered code {\n  padding: 2px 5px;\n  background: #f0f0f0;\n  border-radius: 3px;\n  font-size: 0.9em;\n  font-family: "SF Mono", Monaco, Consolas, "Courier New", monospace;\n}\n\n.mcard-note-content-rendered pre code {\n  padding: 0;\n  background: none;\n}\n\n.mcard-note-content-rendered a {\n  color: #4a90d9;\n  text-decoration: none;\n}\n\n.mcard-note-content-rendered a:hover {\n  text-decoration: underline;\n}\n\n.mcard-note-content-rendered strong {\n  font-weight: 600;\n}\n\n.mcard-note-content-rendered em {\n  font-style: italic;\n}\n\n.mcard-note-content-rendered del {\n  text-decoration: line-through;\n  color: #999;\n}\n\n.mcard-note-content-rendered hr {\n  border: none;\n  border-top: 1px solid #e0e0e0;\n  margin: 12px 0;\n}\n\n.mcard-note-content-rendered .mcard-inline-tag {\n  color: #4a90d9;\n  cursor: pointer;\n  font-weight: 500;\n}\n\n.mcard-note-content-rendered .mcard-inline-tag:hover {\n  text-decoration: underline;\n}\n\n.mcard-note-content-rendered .mcard-note-image {\n  max-width: 100%;\n  max-height: 300px;\n  border-radius: 8px;\n  margin: 6px 0;\n  display: block;\n  cursor: zoom-in;\n  object-fit: contain;\n}\n\n.mcard-inline-tag {\n  display: inline;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 500;\n  cursor: pointer;\n  padding: 1px 4px;\n  border-radius: 4px;\n  transition: background 0.12s ease, color 0.12s ease;\n}\n\n.mcard-inline-tag:hover {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n}\n\n.mcard-inline-tag.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 20%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-note-tags {\n  margin-top: 8px;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 5px;\n}\n\n.mcard-note-tag {\n  font-size: 11px;\n  padding: 2px 8px;\n  border-radius: 10px;\n  border: 1px solid var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  display: inline-block;\n}\n\n/* 空状态 */\n.mcard-empty {\n  text-align: center;\n  padding: 60px 20px;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 13px;\n}\n\n.mcard-empty-icon {\n  font-size: 40px;\n  margin-bottom: 12px;\n  opacity: 0.4;\n}\n\n/* 回顾视图 */\n.mcard-review-card {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 24px;\n  margin: 20px 24px;\n}\n\n.mcard-review-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 16px;\n  padding-bottom: 12px;\n  border-bottom: 1px dashed var(--orca-color-gray-3, #e0e0e0);\n}\n\n.mcard-review-title {\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-review-progress {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  font-variant-numeric: tabular-nums;\n}\n\n.mcard-review-content {\n  font-size: calc(var(--mcard-font-size, 14.5px) + 1px);\n  line-height: 1.75;\n  color: var(--orca-color-text-1, #333);\n  white-space: pre-wrap;\n  word-break: break-word;\n  min-height: 60px;\n}\n\n.mcard-review-actions {\n  display: flex;\n  gap: 8px;\n  margin-top: 16px;\n  padding-top: 14px;\n  border-top: 1px dashed var(--orca-color-gray-3, #e0e0e0);\n}\n\n.mcard-review-btn {\n  flex: 1;\n  padding: 8px 16px;\n  border: none;\n  border-radius: 8px;\n  font-size: 13px;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  font-family: inherit;\n}\n\n.mcard-review-btn.primary {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #ffffff;\n}\n\n.mcard-review-btn.secondary {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-review-btn:hover {\n  opacity: 0.9;\n}\n\n/* Loading spinner */\n.mcard-spinner {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 2px solid var(--orca-color-gray-3, #e0e0e0);\n  border-top-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  border-radius: 50%;\n  animation: mcard-spin 0.8s linear infinite;\n}\n\n@keyframes mcard-spin {\n  to { transform: rotate(360deg); }\n}\n\n/* 每日回顾统计栏 */\n.mcard-daily-stats {\n  display: flex;\n  gap: 10px;\n  padding: 0 24px;\n  margin-bottom: 14px;\n}\n\n.mcard-daily-stat {\n  flex: 1;\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 10px;\n  padding: 10px;\n  text-align: center;\n}\n\n.mcard-daily-stat-num {\n  font-size: 20px;\n  font-weight: 600;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  line-height: 1.2;\n}\n\n.mcard-daily-stat-label {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  margin-top: 2px;\n}\n\n/* 紧凑模式 */\n.mcard-root.compact .mcard-note-card {\n  padding: 8px 12px;\n  margin-bottom: 6px;\n}\n\n.mcard-root.compact .mcard-note-content {\n  font-size: calc(var(--mcard-font-size, 14.5px) - 1px);\n  line-height: 1.55;\n}\n\n.mcard-root.compact .mcard-note-header {\n  margin-bottom: 2px;\n}\n\n.mcard-root.compact .mcard-note-date {\n  font-size: 11px;\n}\n\n.mcard-root.compact .mcard-note-tags {\n  margin-top: 4px;\n  gap: 4px;\n}\n\n/* 模态框 */\n.mcard-capture-modal {\n  position: fixed;\n  inset: 0;\n  z-index: 9999;\n  background: transparent;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 24px;\n  font-family: inherit;\n}\n\n.mcard-capture-modal-inner {\n  width: 100%;\n  max-width: 460px;\n  background: #fff;\n  border-radius: 14px;\n  padding: 18px 18px 14px;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);\n  border: 1px solid #e0e0e0;\n}\n\n.mcard-capture-modal-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 12px;\n}\n\n.mcard-capture-modal-title {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--orca-color-gray-5, #999);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n}\n\n.mcard-capture-modal-close {\n  background: transparent;\n  border: none;\n  font-size: 18px;\n  cursor: pointer;\n  color: var(--orca-color-gray-5, #999);\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-family: inherit;\n}\n\n.mcard-capture-modal-close:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-capture-modal textarea {\n  width: 100%;\n  min-height: 140px;\n  max-height: 320px;\n  resize: vertical;\n  border: none;\n  outline: none;\n  background: #fff;\n  color: #333;\n  font-size: 15px;\n  line-height: 1.7;\n  font-family: inherit;\n}\n\n.mcard-capture-modal-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-top: 12px;\n  border-top: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  gap: 8px;\n}\n\n.mcard-capture-modal-hint {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 隐藏旧的 mcard-root 基础样式，改为 shell 布局 */\n.mcard-root {\n  height: 100%;\n  width: 100%;\n  min-height: 0;\n  overflow: hidden;\n  display: block;\n  padding: 0 !important;\n  background: var(--orca-color-bg-1, #fff);\n  position: relative;\n}\n\n.mcard-root[data-mcard-theme="morandi"] {\n  --mcard-accent: var(--mcard-morandi-color, #9CAF88);\n  background: var(--mcard-morandi-bg, #F7F8F5);\n}\n\n.mcard-root[data-mcard-theme="siyuan"] {\n  --mcard-accent: var(--orca-color-primary-5, #4a90d9);\n}\n\n.mcard-root[data-mcard-theme="original"] {\n  --mcard-accent: var(--orca-color-primary-5, #2d7a7a);\n}\n\n/* ========== 统计视图 ========== */\n.mcard-stats-view {\n  padding: 20px 24px;\n  overflow-y: auto;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n.mcard-stats-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 20px;\n}\n\n.mcard-stats-title {\n  font-size: 22px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-stats-year-select {\n  padding: 6px 12px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-2, #f5f5f5);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  cursor: pointer;\n  outline: none;\n}\n\n.mcard-stats-year-select:hover {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-stats-cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));\n  gap: 12px;\n  margin-bottom: 24px;\n}\n\n.mcard-stat-card {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 16px 12px;\n  text-align: center;\n  transition: all 0.15s ease;\n}\n\n.mcard-stat-card:hover {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  box-shadow: 0 4px 12px color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n}\n\n.mcard-stat-card-num {\n  font-size: 24px;\n  font-weight: 700;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  line-height: 1.2;\n}\n\n.mcard-stat-card-label {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-top: 4px;\n}\n\n.mcard-stats-section {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 20px;\n  margin-bottom: 16px;\n}\n\n.mcard-stats-subtitle {\n  font-size: 16px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 4px;\n}\n\n.mcard-stats-meta {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-bottom: 16px;\n}\n\n.mcard-stats-empty {\n  text-align: center;\n  color: var(--orca-color-gray-5, #999);\n  padding: 24px;\n  font-size: 13px;\n}\n\n/* 每日记录柱状图 */\n.mcard-monthly-bars {\n  display: flex;\n  align-items: flex-end;\n  gap: 4px;\n  height: 120px;\n  padding: 0 4px;\n  margin-bottom: 8px;\n}\n\n.mcard-monthly-bar {\n  flex: 1;\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 30%, transparent);\n  border-radius: 4px 4px 0 0;\n  position: relative;\n  min-height: 4px;\n  transition: all 0.15s ease;\n}\n\n.mcard-monthly-bar:hover {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-monthly-bar-label {\n  position: absolute;\n  top: -18px;\n  left: 50%;\n  transform: translateX(-50%);\n  font-size: 10px;\n  color: var(--orca-color-gray-5, #999);\n  white-space: nowrap;\n}\n\n.mcard-monthly-days {\n  display: flex;\n  gap: 4px;\n  padding: 0 4px;\n}\n\n.mcard-monthly-days span {\n  flex: 1;\n  text-align: center;\n  font-size: 10px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 月度分布柱状图 */\n.mcard-yearly-bars {\n  display: flex;\n  align-items: flex-end;\n  gap: 10px;\n  height: 120px;\n  padding: 0 4px;\n  margin-bottom: 8px;\n}\n\n.mcard-yearly-bar {\n  flex: 1;\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 40%, transparent);\n  border-radius: 6px 6px 0 0;\n  position: relative;\n  min-height: 6px;\n  transition: all 0.15s ease;\n}\n\n.mcard-yearly-bar:hover {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-yearly-bar-label {\n  position: absolute;\n  top: -18px;\n  left: 50%;\n  transform: translateX(-50%);\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  white-space: nowrap;\n}\n\n.mcard-yearly-months {\n  display: flex;\n  gap: 10px;\n  padding: 0 4px;\n}\n\n.mcard-yearly-months span {\n  flex: 1;\n  text-align: center;\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 常用标签列表 */\n.mcard-tags-list {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n\n.mcard-tag-item {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.mcard-tag-name {\n  font-size: 13px;\n  padding: 3px 10px;\n  border-radius: 12px;\n  border: 1px solid;\n  flex-shrink: 0;\n  min-width: 80px;\n  text-align: center;\n}\n\n.mcard-tag-bar-wrapper {\n  flex: 1;\n  height: 8px;\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.mcard-tag-bar {\n  height: 100%;\n  border-radius: 4px;\n  transition: width 0.3s ease;\n}\n\n.mcard-tag-count {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  min-width: 30px;\n  text-align: right;\n}\n\n/* 标签云 */\n.mcard-tag-cloud {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  padding: 8px 0;\n}\n\n.mcard-tag-cloud-item {\n  padding: 6px 14px;\n  border-radius: 16px;\n  font-weight: 500;\n  transition: all 0.15s ease;\n  cursor: pointer;\n  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);\n}\n\n.mcard-tag-cloud-item:hover {\n  transform: scale(1.08);\n  box-shadow: 0 4px 12px color-mix(in srgb, currentColor 20%, transparent);\n}\n\n/* ========== 设置视图 ========== */\n.mcard-settings-area {\n  flex: 1;\n  display: flex;\n  height: 100%;\n  overflow: hidden;\n  background: var(--orca-color-bg-1, #fff);\n}\n\n.mcard-settings-nav {\n  width: 200px;\n  min-width: 200px;\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  padding: 20px 12px;\n  overflow-y: auto;\n  box-sizing: border-box;\n}\n\n.mcard-settings-nav-header {\n  font-size: 18px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  padding: 4px 12px 16px;\n}\n\n.mcard-settings-nav-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 10px 14px;\n  border-radius: 8px;\n  font-size: 14px;\n  color: var(--orca-color-text-2, #555);\n  cursor: pointer;\n  transition: background 0.15s, color 0.15s;\n  margin-bottom: 2px;\n}\n\n.mcard-settings-nav-item:hover {\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 80%, transparent);\n}\n\n.mcard-settings-nav-item.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-weight: 500;\n}\n\n.mcard-settings-nav-icon {\n  font-size: 16px;\n  flex-shrink: 0;\n}\n\n.mcard-settings-content {\n  flex: 1;\n  padding: 24px 36px;\n  overflow-y: auto;\n  box-sizing: border-box;\n  max-width: 720px;\n}\n\n.mcard-settings-section-disabled {\n  opacity: 0.5;\n  pointer-events: none;\n}\n\n.mcard-settings-section {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 18px 20px;\n  margin-bottom: 14px;\n}\n\n.mcard-settings-subtitle {\n  font-size: 15px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 6px;\n}\n\n.mcard-settings-desc {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-bottom: 12px;\n}\n\n.mcard-settings-row {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.mcard-settings-label {\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-settings-select {\n  padding: 6px 12px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  cursor: pointer;\n  outline: none;\n}\n\n.mcard-settings-select:hover {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-settings-input {\n  padding: 6px 10px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  outline: none;\n  width: 100px;\n}\n\n.mcard-settings-input:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-settings-btn {\n  padding: 6px 14px;\n  border-radius: 8px;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n\n.mcard-settings-btn:hover {\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-settings-btn-danger {\n  color: #d32f2f;\n  border-color: #e57373;\n}\n.mcard-settings-btn-danger:hover {\n  background: #fde8e8;\n  border-color: #d32f2f;\n}\n\n.mcard-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0,0,0,0.4);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 99999;\n}\n\n.mcard-confirm-dialog {\n  background: var(--orca-color-bg-1, #fff);\n  border-radius: 12px;\n  padding: 24px;\n  max-width: 380px;\n  width: 90%;\n  box-shadow: 0 8px 32px rgba(0,0,0,0.2);\n}\n\n.mcard-confirm-title {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 8px;\n}\n\n.mcard-confirm-desc {\n  font-size: 13px;\n  color: var(--orca-color-gray-5, #999);\n  line-height: 1.5;\n  margin-bottom: 20px;\n}\n\n.mcard-confirm-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n}\n\n.mcard-settings-unit {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* Toggle Switch */\n.mcard-toggle {\n  position: relative;\n  display: inline-block;\n  width: 44px;\n  height: 24px;\n  cursor: pointer;\n}\n\n.mcard-toggle input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.mcard-toggle-slider {\n  position: absolute;\n  inset: 0;\n  background: color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 60%, transparent);\n  border-radius: 24px;\n  transition: 0.2s;\n}\n\n.mcard-toggle-slider::before {\n  content: "";\n  position: absolute;\n  height: 18px;\n  width: 18px;\n  left: 3px;\n  top: 3px;\n  background: white;\n  border-radius: 50%;\n  transition: 0.2s;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);\n}\n\n.mcard-toggle input:checked + .mcard-toggle-slider {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-toggle input:checked + .mcard-toggle-slider::before {\n  transform: translateX(20px);\n}\n\n/* 主题色选择 */\n.mcard-theme-grid {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.mcard-theme-swatch {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: 2px solid transparent;\n  cursor: pointer;\n  transition: all 0.15s ease;\n  padding: 0;\n}\n\n.mcard-theme-swatch:hover {\n  transform: scale(1.1);\n}\n\n.mcard-theme-swatch.active {\n  border-color: var(--orca-color-text-1, #333);\n  box-shadow: 0 0 0 2px var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n/* ========== 热力图（GitHub 风格贡献图） ========== */\n.mcard-contribution-section {\n  background: var(--orca-color-bg-1, #fff);\n  border-radius: 8px;\n  padding: 18px 20px;\n  margin-bottom: 12px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 25%, transparent);\n  box-shadow: none;\n}\n\n.mcard-contribution-body {\n  display: flex;\n  gap: 8px;\n  align-items: stretch;\n  width: 100%;\n}\n\n.mcard-contribution-columns {\n  display: flex;\n  gap: 4px;\n  width: 100%;\n}\n\n.mcard-contribution-column {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  min-width: 0;\n}\n\n.mcard-contribution-cell {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 3px;\n  background: #ebedf0;\n  cursor: pointer;\n  transition: transform 0.15s;\n  min-height: 0;\n}\n\n.mcard-contribution-cell:hover {\n  transform: scale(1.2);\n  box-shadow: 0 0 0 1px #40c463;\n}\n\n.mcard-contribution-cell.level-empty {\n  background: #ebedf0;\n  opacity: 0.5;\n  cursor: default;\n}\n\n.mcard-contribution-cell.level-empty:hover {\n  transform: none;\n  box-shadow: none;\n}\n\n.mcard-contribution-cell.level-1 {\n  background: #9be9a8;\n}\n\n.mcard-contribution-cell.level-2 {\n  background: #40c463;\n}\n\n.mcard-contribution-cell.level-3 {\n  background: #30a14e;\n}\n\n.mcard-contribution-cell.level-4 {\n  background: #216e39;\n}\n\n.mcard-contribution-months {\n  position: relative;\n  margin-top: 8px;\n  height: 16px;\n  width: 100%;\n}\n\n.mcard-contribution-month-label {\n  position: absolute;\n  transform: translateX(-50%);\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  white-space: nowrap;\n  line-height: 1;\n}\n\n.mcard-contribution-legend {\n  display: none;\n}\n\n/* ========== 长笔记自动折叠 ========== */\n.mcard-note-content.collapsed {\n  max-height: var(--collapse-max-height, 116px);\n  overflow: hidden;\n  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 36px), transparent 100%);\n  mask-image: linear-gradient(to bottom, black calc(100% - 36px), transparent 100%);\n}\n\n.mcard-note-content.expanded {\n  max-height: none;\n  -webkit-mask-image: none;\n  mask-image: none;\n}\n\n.mcard-expand-btn {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 2px;\n  margin-top: 4px;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 13px;\n  cursor: pointer;\n  user-select: none;\n  transition: color 0.2s;\n  background: transparent;\n  border: none;\n  font-family: inherit;\n  padding: 2px 0;\n}\n\n.mcard-expand-btn:hover {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-expand-btn svg {\n  width: 14px;\n  height: 14px;\n  transition: transform 0.2s;\n}\n\n.mcard-expand-btn.expanded svg {\n  transform: rotate(180deg);\n}\n\n/* ========== 批注（Memo）样式 ========== */\n.mcard-note-memo-btn {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 12px;\n  cursor: pointer;\n  padding: 2px 6px;\n  border-radius: 4px;\n  font-family: inherit;\n  transition: background 0.15s, color 0.15s;\n}\n\n.mcard-note-memo-btn:hover {\n  background: var(--orca-color-gray-1, #f5f5f5);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n/* 头部圆形图标按钮 */\n.mcard-note-memo-btn-icon {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  cursor: pointer;\n  width: 28px;\n  height: 28px;\n  border-radius: 50%;\n  font-family: inherit;\n  transition: background 0.15s, color 0.15s;\n  position: relative;\n}\n\n.mcard-note-memo-btn-icon:hover {\n  background: var(--orca-color-gray-1, #f5f5f5);\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-note-memo-btn-icon svg {\n  width: 14px;\n  height: 14px;\n}\n\n.mcard-note-memo-badge {\n  position: absolute;\n  top: 0;\n  right: 0;\n  min-width: 14px;\n  height: 14px;\n  padding: 0 3px;\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #fff;\n  font-size: 10px;\n  font-weight: 600;\n  line-height: 14px;\n  text-align: center;\n  border-radius: 7px;\n  transform: translate(2px, -2px);\n  pointer-events: none;\n}\n\n.mcard-note-memos {\n  margin-top: 8px;\n  padding-top: 8px;\n  border-top: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n\n.mcard-note-memo-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  padding: 6px 8px;\n  background: var(--orca-color-gray-1, #f5f5f5);\n  border-radius: 6px;\n  font-size: 13px;\n  line-height: 1.6;\n}\n\n.mcard-note-memo-content {\n  color: var(--orca-color-text-1, #333);\n  word-break: break-word;\n}\n\n.mcard-note-memo-actions {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 4px;\n}\n\n.mcard-note-memo-date {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-note-memo-menu-btn {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  opacity: 0.5;\n  transition: opacity 0.15s;\n  border-radius: 3px;\n  color: var(--orca-color-text-2, #555);\n  display: flex;\n  align-items: center;\n}\n\n.mcard-note-memo-menu-btn:hover {\n  opacity: 1;\n  background: var(--orca-color-bg-2, #f5f5f5);\n}\n\n.mcard-note-memo-input-wrap {\n  margin-top: 6px;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n\n.mcard-note-memo-input {\n  width: 100%;\n  box-sizing: border-box;\n  resize: none;\n  border: 1px solid var(--orca-color-gray-1, #f5f5f5);\n  border-radius: 6px;\n  padding: 8px;\n  font-size: 13px;\n  line-height: 1.5;\n  font-family: inherit;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  outline: none;\n  transition: border-color 0.2s;\n}\n\n.mcard-note-memo-input:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-note-memo-input-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 6px;\n}\n\n.mcard-note-memo-cancel {\n  background: transparent;\n  border: none;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 12px;\n  cursor: pointer;\n  padding: 4px 10px;\n  border-radius: 4px;\n  font-family: inherit;\n}\n\n.mcard-note-memo-cancel:hover {\n  background: var(--orca-color-gray-1, #f5f5f5);\n}\n\n.mcard-note-memo-save {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  border: none;\n  color: #fff;\n  font-size: 12px;\n  cursor: pointer;\n  padding: 4px 14px;\n  border-radius: 4px;\n  font-family: inherit;\n  font-weight: 500;\n  transition: opacity 0.15s;\n}\n\n.mcard-note-memo-save:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.mcard-note-memo-save:not(:disabled):hover {\n  opacity: 0.85;\n}\n\n/* 详情面板批注 */\n.mcard-detail-memo-bar {\n  margin-top: 16px;\n}\n\n.mcard-detail-memos {\n  margin-top: 8px;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n}\n\n/* 批注笔记底部显示原始笔记引用 */\n.mcard-note-relation {\n  margin-top: 8px;\n  padding-top: 8px;\n  border-top: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n}\n\n/* 多个关联区域相邻时，只保留第一个的虚线 */\n.mcard-note-relation + .mcard-note-relation {\n  border-top: none;\n  padding-top: 0;\n  margin-top: 0;\n}\n\n.mcard-note-relation-item {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 0;\n  background: transparent;\n  border-radius: 0;\n  cursor: pointer;\n  transition: opacity 0.15s;\n  font-size: 12px;\n}\n\n.mcard-note-relation-item:hover {\n  opacity: 0.8;\n}\n\n.mcard-note-relation-item svg {\n  width: 16px;\n  height: 16px;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  flex-shrink: 0;\n}\n\n.mcard-note-relation-info {\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-size: 12px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n/* 编辑模式关联显示 */\n.mcard-edit-relation-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  padding-top: 6px;\n  border-top: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n  margin-top: 2px;\n}\n\n.mcard-edit-relation {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 8px;\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border-radius: 6px;\n  font-size: 12px;\n  max-width: 100%;\n}\n\n.mcard-edit-relation-row {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n  margin-bottom: 4px;\n  padding-bottom: 6px;\n  border-bottom: 1px dashed var(--orca-color-gray-3, var(--orca-color-bg-2-light));\n}\n\n.mcard-edit-parent-picker-wrapper {\n  position: relative;\n  flex: 1;\n  min-width: 120px;\n}\n\n.mcard-parent-icon {\n  display: flex;\n  align-items: center;\n  flex-shrink: 0;\n  width: 16px;\n  height: 16px;\n}\n\n.mcard-parent-icon svg {\n  width: 16px;\n  height: 16px;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-edit-parent-search {\n  width: 100%;\n  border: none;\n  border-radius: 0;\n  padding: 4px 8px;\n  font-size: 12px;\n  outline: none;\n  background: transparent;\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n}\n\n.mcard-edit-parent-search:focus {\n  outline: none;\n}\n\n.mcard-edit-parent-search::placeholder {\n  color: var(--orca-color-gray-5, #999);\n}\n\n.mcard-edit-parent-picker {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  z-index: 100;\n  max-height: 200px;\n  overflow-y: auto;\n  margin-top: 2px;\n}\n\n.mcard-edit-parent-picker-item {\n  padding: 6px 10px;\n  font-size: 12px;\n  cursor: pointer;\n  color: var(--orca-color-text-2, #555);\n  transition: background 0.15s;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-edit-parent-picker-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n.mcard-picker-title {\n  font-size: 13px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  line-height: 1.3;\n}\n.mcard-picker-content {\n  font-size: 11px;\n  color: var(--orca-color-gray-5, #999);\n  line-height: 1.3;\n  margin-top: 2px;\n}\n\n.mcard-edit-relation-parent {\n  margin-bottom: 0;\n  border-bottom: none;\n  padding-bottom: 0;\n}\n\n.mcard-edit-relation svg {\n  width: 16px;\n  height: 16px;\n  color: var(--orca-color-gray-5, #999);\n  flex-shrink: 0;\n}\n\n.mcard-edit-relation-info {\n  flex: 0 1 auto;\n  color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  font-size: 12px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  line-height: 1;\n}\n\n.mcard-edit-relation-remove {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 2px;\n  border-radius: 4px;\n  color: var(--orca-color-gray-5, #999);\n  opacity: 0.5;\n  transition: all 0.15s;\n  display: flex;\n  align-items: center;\n  flex-shrink: 0;\n}\n\n.mcard-edit-relation-remove:hover {\n  opacity: 1;\n  color: var(--orca-color-error, #e53935);\n  background: color-mix(in srgb, var(--orca-color-error, #e53935) 10%, transparent);\n}\n\n.mcard-edit-relation-remove svg {\n  width: 14px;\n  height: 14px;\n}\n\n/* @ 提及/引用选择器 */\n.mcard-mention-picker {\n  background: var(--orca-color-bg-2, #f5f5f5);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  border-radius: 8px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);\n  min-width: 280px;\n  max-width: 360px;\n  max-height: 320px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  z-index: 99999;\n}\n\n.mcard-mention-picker-list {\n  max-height: 320px;\n  overflow-y: auto;\n  padding: 4px 0;\n}\n\n.mcard-mention-picker-item {\n  padding: 10px 14px;\n  cursor: pointer;\n  transition: background 0.15s;\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n}\n\n.mcard-mention-picker-item:last-child {\n  border-bottom: none;\n}\n\n.mcard-mention-picker-item:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n.mcard-mention-picker-date {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n  margin-bottom: 4px;\n}\n\n.mcard-mention-picker-preview {\n  font-size: 14px;\n  color: var(--orca-color-text-1, #333);\n  line-height: 1.4;\n  word-break: break-word;\n}\n\n.mcard-mention-picker-title {\n  font-size: 14px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  line-height: 1.5;\n  word-break: break-word;\n}\n\n.mcard-mention-picker-empty {\n  padding: 20px;\n  text-align: center;\n  color: var(--orca-color-gray-5, #999);\n  font-size: 13px;\n}\n\n.mcard-mention-highlight {\n  background-color: #ffeb3b;\n  color: #000;\n  border-radius: 2px;\n  padding: 0 1px;\n}\n\n/* 内容中的 @ 引用 */\n.mcard-memo-ref {\n  display: inline;\n  padding: 1px 4px;\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4285f4) 12%, transparent);\n  color: var(--orca-color-primary-5, #4285f4);\n  border-radius: 3px;\n  font-size: inherit;\n  cursor: pointer;\n  margin: 0 1px;\n  transition: background 0.2s;\n  line-height: inherit;\n  white-space: nowrap;\n  word-break: break-all;\n}\n\n.mcard-memo-ref:hover {\n  background: color-mix(in srgb, var(--orca-color-primary-5, #4285f4) 30%, transparent);\n}\n\n/* ========== Flomo 同步面板 ========== */\n.mcard-flomo-panel {\n  padding: 20px 24px;\n  overflow-y: auto;\n  height: 100%;\n  box-sizing: border-box;\n  max-width: 720px;\n}\n\n.mcard-flomo-card {\n  background: var(--orca-color-bg-1, #fff);\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 12px;\n  padding: 18px 20px;\n  margin-bottom: 14px;\n}\n\n.mcard-flomo-card.disabled {\n  opacity: 0.5;\n  pointer-events: none;\n}\n\n.mcard-flomo-card-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 16px;\n}\n\n.mcard-flomo-card-title {\n  font-size: 15px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-flomo-card-desc {\n  font-size: 13px;\n  color: var(--orca-color-gray-5, #999);\n  margin-top: 2px;\n}\n\n.mcard-flomo-badge {\n  padding: 4px 10px;\n  border-radius: 12px;\n  font-size: 12px;\n  font-weight: 600;\n  background: #f5f5f5;\n  color: #888;\n}\n\n.mcard-flomo-badge.success {\n  background: #40c463;\n  color: #fff;\n}\n\n.mcard-flomo-form-row {\n  margin-bottom: 12px;\n}\n\n.mcard-flomo-form-label {\n  display: block;\n  font-size: 13px;\n  margin-bottom: 6px;\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-flomo-input {\n  width: 100%;\n  padding: 8px 12px;\n  min-height: 36px;\n  font-size: 13px;\n  border-radius: 6px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  box-sizing: border-box;\n  font-family: inherit;\n}\n\n.mcard-flomo-input:focus {\n  outline: none;\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-flomo-input:disabled {\n  opacity: 0.7;\n  cursor: not-allowed;\n}\n\n.mcard-flomo-readonly {\n  padding: 8px 12px;\n  min-height: 36px;\n  font-size: 13px;\n  border-radius: 6px;\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 50%, transparent);\n  color: var(--orca-color-text-2, #555);\n  display: flex;\n  align-items: center;\n}\n\n.mcard-flomo-checkbox-label {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n  cursor: pointer;\n}\n\n.mcard-flomo-checkbox-label input[type="checkbox"] {\n  width: 16px;\n  height: 16px;\n  cursor: pointer;\n}\n\n.mcard-flomo-form-actions {\n  display: flex;\n  gap: 10px;\n}\n\n.mcard-flomo-btn {\n  padding: 8px 16px;\n  font-size: 13px;\n  border-radius: 6px;\n  border: none;\n  cursor: pointer;\n  font-family: inherit;\n  transition: opacity 0.2s;\n}\n\n.mcard-flomo-btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.mcard-flomo-btn-primary {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #fff;\n}\n\n.mcard-flomo-btn-secondary {\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 80%, transparent);\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-flomo-message {\n  margin-top: 10px;\n  padding: 8px 12px;\n  font-size: 13px;\n  border-radius: 6px;\n  background: color-mix(in srgb, var(--orca-color-bg-2, #f5f5f5) 50%, transparent);\n  color: var(--orca-color-text-2, #555);\n}\n\n/* ========== 检索式设置 ========== */\n.chart-filter-option {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}\n\n.chart-filter-option label {\n  font-size: 12px;\n  font-weight: 500;\n  color: var(--orca-color-text-2, #555);\n}\n\n.chart-filter-option select {\n  padding: 6px 10px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 6px;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-size: 13px;\n  outline: none;\n  transition: border-color 0.15s ease;\n}\n\n.chart-filter-option select:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n/* 检索式弹窗布局 */\n.mcard-expr-layout {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n}\n\n.mcard-expr-top {\n  flex-shrink: 0;\n  overflow-y: auto;\n  max-height: 45vh;\n}\n\n.mcard-expr-bottom {\n  flex: 1;\n  display: flex;\n  min-height: 0;\n  border-top: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n}\n\n.mcard-expr-sidebar {\n  width: 140px;\n  flex-shrink: 0;\n  overflow-y: auto;\n  border-right: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n}\n\n.mcard-expr-main {\n  flex: 1;\n  overflow-y: auto;\n  min-width: 0;\n}\n\n/* 匹配模式切换 */\n.mcard-match-mode {\n  display: flex;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 6px;\n  overflow: hidden;\n  align-self: flex-start;\n}\n\n.mcard-match-mode-btn {\n  padding: 4px 14px;\n  font-size: 12px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--orca-color-text-2, #555);\n  transition: background 0.12s, color 0.12s;\n}\n\n.mcard-match-mode-btn.active {\n  background: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n  color: #fff;\n}\n\n/* 文本筛选行 */\n.mcard-text-filter-row {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n}\n\n.mcard-text-filter-row select,\n.mcard-text-filter-row input {\n  padding: 4px 8px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 6px;\n  font-size: 12px;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  outline: none;\n}\n\n.mcard-text-filter-row select { width: 90px; }\n.mcard-text-filter-row input { flex: 1; min-width: 100px; }\n\n.mcard-text-filter-row .mcard-filter-remove {\n  padding: 2px 6px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--orca-color-dangerous-5, #e74c3c);\n  font-size: 14px;\n  border-radius: 4px;\n}\n\n.mcard-text-filter-row .mcard-filter-remove:hover {\n  background: color-mix(in srgb, var(--orca-color-dangerous-5, #e74c3c) 10%, transparent);\n}\n\n/* 日期范围行 */\n.mcard-date-range {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n}\n\n.mcard-date-range input {\n  flex: 1;\n  padding: 4px 8px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 6px;\n  font-size: 12px;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  outline: none;\n}\n\n.mcard-date-range span {\n  font-size: 12px;\n  color: var(--orca-color-gray-5, #999);\n}\n\n/* 布尔筛选（有无图片/引用） */\n.mcard-bool-filters {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n\n.mcard-bool-filter {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: var(--orca-color-text-2, #555);\n}\n\n.mcard-bool-filter select {\n  padding: 4px 8px;\n  border: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent);\n  border-radius: 6px;\n  font-size: 12px;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  outline: none;\n}\n\n/* 检索式侧边栏项 */\n.mcard-expr-sidebar-item {\n  padding: 8px 10px;\n  cursor: pointer;\n  font-size: 12px;\n  border-bottom: 1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 40%, transparent);\n  transition: background 0.12s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.mcard-expr-sidebar-item:hover {\n  background: color-mix(in srgb, var(--orca-color-bg-3, #f0f0f0) 50%, transparent);\n}\n\n.mcard-expr-sidebar-item.active {\n  background: color-mix(in srgb, var(--mcard-accent, var(--orca-color-primary-5, #4a90d9)) 12%, transparent);\n  font-weight: 600;\n}\n\n.mcard-expr-sidebar-item-name {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-expr-sidebar-item-actions {\n  display: flex;\n  gap: 2px;\n  flex-shrink: 0;\n}\n\n.mcard-expr-sidebar-item-actions button {\n  padding: 1px 5px;\n  font-size: 10px;\n  border: none;\n  background: transparent;\n  cursor: pointer;\n  color: var(--orca-color-gray-5, #999);\n  border-radius: 3px;\n}\n\n.mcard-expr-sidebar-item-actions button:hover {\n  background: var(--orca-color-bg-3, #f0f0f0);\n  color: var(--orca-color-text-1, #333);\n}\n\n.mcard-expr-sidebar-item-actions button:hover.danger {\n  color: var(--orca-color-dangerous-5, #e74c3c);\n}\n\n/* ========== 卡片详情面板 ========== */\n/* ========== 卡片详情弹窗 ========== */\n.mcard-detail-overlay {\n  position: absolute;\n  inset: 0;\n  z-index: 10000;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding-top: 5vh;\n  background: rgba(0, 0, 0, 0.4);\n  backdrop-filter: blur(4px);\n  animation: mcard-detail-fade-in 0.2s ease;\n}\n\n@keyframes mcard-detail-fade-in {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n.mcard-detail-panel {\n  width: 620px;\n  max-width: 90vw;\n  max-height: 90vh;\n  background: var(--mcard-bg, #fff);\n  border-radius: 12px;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);\n  animation: mcard-detail-pop-in 0.2s ease;\n  overflow: hidden;\n}\n\n@keyframes mcard-detail-pop-in {\n  from { transform: translateY(20px); opacity: 0; }\n  to { transform: translateY(0); opacity: 1; }\n}\n\n.mcard-detail-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 20px;\n  border-bottom: 1px solid var(--mcard-border, #f0f0f0);\n  flex-shrink: 0;\n}\n\n.mcard-detail-back {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  background: none;\n  border: none;\n  color: #666;\n  font-size: 14px;\n  cursor: pointer;\n  padding: 6px 10px;\n  border-radius: 6px;\n  transition: background 0.15s, color 0.15s;\n}\n\n.mcard-detail-back:hover {\n  background: var(--mcard-hover-bg, #f5f5f5);\n  color: #333;\n}\n\n.mcard-detail-back svg {\n  width: 18px;\n  height: 18px;\n}\n\n.mcard-detail-meta {\n  font-size: 12px;\n  color: #999;\n}\n\n.mcard-detail-edited {\n  margin-left: 6px;\n  color: #bbb;\n}\n\n.mcard-detail-action-btn {\n  padding: 6px 14px;\n  border-radius: 6px;\n  border: 1px solid var(--mcard-border, #e0e0e0);\n  background: var(--mcard-bg, #fff);\n  color: #666;\n  font-size: 12px;\n  cursor: pointer;\n  transition: all 0.15s;\n}\n\n.mcard-detail-action-btn:hover {\n  background: var(--mcard-hover-bg, #f5f5f5);\n  border-color: #ccc;\n}\n\n.mcard-detail-action-btn.danger {\n  color: #e53935;\n  border-color: #ffcdd2;\n}\n\n.mcard-detail-action-btn.danger:hover {\n  background: #fff5f5;\n  border-color: #e53935;\n}\n\n/* 详情弹窗区块 */\n.mcard-detail-section {\n  padding: 0 20px;\n  flex-shrink: 0;\n}\n\n.mcard-detail-section + .mcard-detail-section {\n  border-top: 1px solid var(--mcard-border, #f0f0f0);\n}\n\n.mcard-detail-section-label {\n  font-size: 11px;\n  font-weight: 600;\n  color: #999;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  padding: 12px 0 8px;\n}\n\n.mcard-detail-section-label-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 0 8px;\n}\n\n.mcard-detail-section-label-row .mcard-detail-section-label {\n  padding: 0;\n}\n\n.mcard-view-toggle {\n  background: none;\n  border: 1px solid var(--mcard-border, #e0e0e0);\n  border-radius: 4px;\n  cursor: pointer;\n  padding: 3px 5px;\n  display: flex;\n  align-items: center;\n  color: #999;\n  transition: all 0.15s;\n  flex-shrink: 0;\n}\n\n.mcard-view-toggle:hover {\n  background: var(--mcard-hover-bg, #f5f5f5);\n  color: #666;\n}\n\n/* 父级引用区 */\n.mcard-detail-parents {\n  padding-top: 8px;\n  padding-bottom: 8px;\n}\n\n/* 卡片区 */\n.mcard-detail-card {\n  padding-top: 16px;\n  padding-bottom: 16px;\n  cursor: default;\n  flex-shrink: 0;\n}\n\n.mcard-detail-card-edit {\n  padding-top: 12px;\n  padding-bottom: 8px;\n  flex-shrink: 0;\n}\n\n.mcard-detail-content {\n  font-size: 15px;\n  line-height: 1.8;\n  color: var(--mcard-text, #333);\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  min-height: 100px;\n}\n\n.mcard-detail-content img {\n  max-width: 100%;\n  border-radius: 8px;\n  margin: 8px 0;\n  cursor: pointer;\n}\n\n.mcard-detail-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-top: 12px;\n}\n\n.mcard-detail-tag {\n  display: inline-block;\n  padding: 3px 10px;\n  border-radius: 12px;\n  font-size: 12px;\n  background: var(--mcard-tag-bg, #f0f5ff);\n  color: var(--mcard-accent, #4a90d9);\n  cursor: pointer;\n  transition: all 0.15s;\n}\n\n.mcard-detail-tag:hover {\n  opacity: 0.8;\n}\n\n.mcard-detail-tag-active {\n  background: var(--mcard-accent, #4a90d9);\n  color: #fff;\n}\n\n.mcard-detail-tag-excluded {\n  background: #fde8e8;\n  color: #d32f2f;\n  text-decoration: line-through;\n  opacity: 0.7;\n}\n\n/* 子级标签 */\n.mcard-detail-child-tags {\n  flex-shrink: 0;\n}\n\n.mcard-detail-child-tags-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding-bottom: 12px;\n}\n\n/* 子级卡片列表 - 可滚动 */\n.mcard-detail-child-cards {\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n}\n\n.mcard-detail-child-cards-list {\n  flex: 1;\n  overflow-y: auto;\n  padding-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n\n.mcard-detail-child-cards-list.mcard-child-grid {\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.mcard-detail-child-cards-list.mcard-child-grid .mcard-detail-child-card {\n  width: calc(33.33% - 7px);\n  min-width: 0;\n  box-sizing: border-box;\n}\n\n.mcard-detail-child-card {\n  background: var(--mcard-surface, #f8f9fa);\n  border-radius: 8px;\n  padding: 12px 14px;\n  cursor: pointer;\n  transition: background 0.15s;\n  border: 1px solid var(--mcard-border, #eee);\n}\n\n.mcard-detail-child-card:hover {\n  background: var(--mcard-hover-bg, #f0f0f0);\n}\n\n.mcard-detail-child-card-title {\n  font-weight: 600;\n  font-size: 14px;\n  margin-bottom: 4px;\n  color: var(--mcard-text, #333);\n}\n\n.mcard-detail-child-card-content {\n  font-size: 13px;\n  line-height: 1.6;\n  color: var(--mcard-text-secondary, #555);\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  word-wrap: break-word;\n  word-break: break-word;\n}\n\n.mcard-detail-child-card-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 8px;\n  gap: 8px;\n}\n\n.mcard-detail-child-card-date {\n  font-size: 11px;\n  color: #999;\n  flex-shrink: 0;\n}\n\n.mcard-detail-child-card-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n\n.mcard-detail-empty {\n  text-align: center;\n  padding: 24px 0;\n  color: #999;\n  font-size: 13px;\n}\n\n/* ========== 卡片内联编辑 ========== */\n.mcard-inline-edit {\n  margin-bottom: 0;\n}\n\n.mcard-inline-edit .mcard-input-field {\n  min-height: 100px;\n  max-height: 400px;\n}\n\n.mcard-edit-title-input {\n  width: 100%;\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 16px;\n  font-weight: 600;\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n  padding: 0 0 2px;\n  margin-bottom: 0;\n}\n\n.mcard-edit-title-input::placeholder {\n  color: var(--orca-color-gray-5, #999);\n  font-weight: 400;\n}\n\n.mcard-note-title {\n  font-size: 17px;\n  font-weight: 700;\n  color: var(--orca-color-text-1, #333);\n  margin-bottom: 4px;\n  line-height: 1.4;\n}\n\n.mcard-inline-edit-cancel {\n  padding: 4px 10px;\n  font-size: 13px;\n  color: var(--orca-color-text-2, #555);\n  background: transparent;\n  border: none;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: background 0.15s;\n  font-family: inherit;\n}\n\n.mcard-inline-edit-cancel:hover {\n  background: var(--orca-color-gray-2, #f0f0f0);\n}\n\n/* ========== 提及选择器 ========== */\n.mcard-mention-picker {\n  background: var(--orca-color-bg-2, #fff);\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 8px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  min-width: 260px;\n  max-width: 320px;\n  max-height: 300px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  margin-top: 4px;\n  z-index: 100;\n}\n\n.mcard-mention-picker-search {\n  padding: 8px;\n  border-bottom: 1px solid var(--orca-color-gray-3, #e0e0e0);\n}\n\n.mcard-mention-picker-search input {\n  width: 100%;\n  box-sizing: border-box;\n  border: 1px solid var(--orca-color-gray-3, #e0e0e0);\n  border-radius: 4px;\n  padding: 6px 8px;\n  font-size: 13px;\n  outline: none;\n  background: var(--orca-color-bg-1, #fff);\n  color: var(--orca-color-text-1, #333);\n  font-family: inherit;\n}\n\n.mcard-mention-picker-search input:focus {\n  border-color: var(--mcard-accent, var(--orca-color-primary-5, #4a90d9));\n}\n\n.mcard-mention-picker-list {\n  overflow-y: auto;\n  flex: 1;\n}\n\n.mcard-mention-picker-item {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  padding: 8px 12px;\n  cursor: pointer;\n  border-bottom: 1px solid var(--orca-color-bg-2-light, #f0f0f0);\n  transition: background 0.1s;\n}\n\n.mcard-mention-picker-item:last-child {\n  border-bottom: none;\n}\n\n.mcard-mention-picker-item:hover,\n.mcard-mention-picker-item.active {\n  background: var(--orca-color-gray-1, #f5f5f5);\n}\n\n.mcard-mention-picker-date {\n  font-size: 11px;\n  color: var(--orca-color-text-2-light, #999);\n}\n\n.mcard-mention-picker-preview {\n  font-size: 13px;\n  color: var(--orca-color-text-1, #333);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.mcard-mention-picker-empty {\n  padding: 20px;\n  text-align: center;\n  font-size: 13px;\n  color: var(--orca-color-text-2-light, #999);\n}\n';
 let _locale = "en";
 let _translations = {};
 function setupL10N(locale, builtinTranslations) {
@@ -1832,6 +1832,7 @@ const STORAGE_REVIEW_KEY = "mcard.reviewHistory";
 const STORAGE_FLOMO_KEY = "mcard.flomoConfig";
 const STORAGE_INBOX_KEY = "mcard.inboxConfig";
 const STORAGE_PINNED_TAGS_KEY = "mcard.pinnedTags";
+const STORAGE_SEARCH_EXPR_KEY = "mcard.searchExprs";
 const COLLAPSE_LINE_COUNT = 4;
 async function loadNotes(pluginName2) {
   try {
@@ -1948,7 +1949,7 @@ function isThisWeek(ts) {
   startOfWeek.setHours(0, 0, 0, 0);
   return ts >= startOfWeek.getTime();
 }
-function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
+function McardPanel({ pluginName: pluginName2, settings, onSettingsChange, panelId }) {
   const [notes, setNotes] = React.useState([]);
   const [tab, setTab] = React.useState("shuoshuo");
   const [shuoshuoView, setShuoshuoView] = React.useState("all");
@@ -2019,6 +2020,16 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
   const [childTagIncluded, setChildTagIncluded] = React.useState([]);
   const [childTagExcluded, setChildTagExcluded] = React.useState([]);
   const [childCardGridMode, setChildCardGridMode] = React.useState(false);
+  const [showSearchExprModal, setShowSearchExprModal] = React.useState(false);
+  const [showExprBuilder, setShowExprBuilder] = React.useState(false);
+  const [searchExprs, setSearchExprs] = React.useState([]);
+  const [editingExpr, setEditingExpr] = React.useState(null);
+  const [activeExprId, setActiveExprId] = React.useState(null);
+  const [searchExprResultGrid, setSearchExprResultGrid] = React.useState(false);
+  const [tagSearchMap, setTagSearchMap] = React.useState({});
+  const [exprMenuId, setExprMenuId] = React.useState(null);
+  const [exprTagIncluded, setExprTagIncluded] = React.useState([]);
+  const [exprTagExcluded, setExprTagExcluded] = React.useState([]);
   React.useEffect(() => {
     let cancelled = false;
     void (async () => {
@@ -2068,6 +2079,19 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     if (!initLoaded) return;
     void savePinnedTags(pluginName2, pinnedTags);
   }, [pinnedTags, pluginName2, initLoaded]);
+  React.useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_SEARCH_EXPR_KEY);
+      if (raw) setSearchExprs(JSON.parse(raw));
+    } catch {
+    }
+  }, []);
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_SEARCH_EXPR_KEY, JSON.stringify(searchExprs));
+    } catch {
+    }
+  }, [searchExprs]);
   React.useEffect(() => {
     let cancelled = false;
     void (async () => {
@@ -2527,6 +2551,18 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     setNotes([]);
     await saveNotes(pluginName2, []);
   }
+  async function handleImportNotes(importedNotes) {
+    const existingIds = new Set(notes.map((n) => n.id));
+    const newNotes = importedNotes.filter((n) => !existingIds.has(n.id));
+    if (newNotes.length === 0) {
+      orca.notify("info", "没有新笔记可导入");
+      return;
+    }
+    const merged = [...newNotes, ...notes];
+    setNotes(merged);
+    await saveNotes(pluginName2, merged);
+    orca.notify("success", `成功导入 ${newNotes.length} 条笔记`);
+  }
   function autoResizeTextarea(ta) {
     if (!ta) return;
     ta.style.height = "auto";
@@ -2581,10 +2617,8 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
   function handleDetailAtClick() {
     const ta = document.querySelector(".mcard-detail-edit-area");
     showMentionPicker(ta, (inp, nid) => {
-      var _a;
-      const notesList = notes;
-      const target = notesList.find((n) => n.id === nid);
-      const refText = (target == null ? void 0 : target.title) || ((_a = target == null ? void 0 : target.content) == null ? void 0 : _a.slice(0, 18)) || nid;
+      const target = notes.find((n) => n.id === nid);
+      const refText = (target == null ? void 0 : target.title) || nid;
       const start = inp.selectionStart;
       const end = inp.selectionEnd;
       const text = inp.value;
@@ -3084,6 +3118,9 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     const picker = document.createElement("div");
     picker.className = "mcard-mention-picker";
     picker.dataset.triggerPos = String(triggerPos);
+    if (onInsert) {
+      picker.__onInsert = onInsert;
+    }
     const cursorTop = getCursorTop(input);
     const rect = input.getBoundingClientRect();
     const fontSize = parseFloat(getComputedStyle(input).fontSize) || 14.5;
@@ -3105,6 +3142,7 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     setTimeout(() => document.addEventListener("click", close), 0);
   }
   function _renderMentionPicker(picker, searchText2, input, onInsert) {
+    const savedOnInsert = onInsert || picker.__onInsert;
     const listEl = document.createElement("div");
     listEl.className = "mcard-mention-picker-list";
     const kw = searchText2.toLowerCase().trim();
@@ -3131,7 +3169,7 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     }
     picker.innerHTML = "";
     picker.appendChild(listEl);
-    const insertFn = onInsert || insertMention;
+    const insertFn = savedOnInsert || insertMention;
     listEl.querySelectorAll(".mcard-mention-picker-item").forEach((el) => {
       el.addEventListener("click", () => {
         const noteId = el.dataset.id;
@@ -3154,7 +3192,7 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
       return;
     }
     const searchText2 = value.substring(triggerPos + 1, cursorPos);
-    _renderMentionPicker(picker, searchText2, input);
+    _renderMentionPicker(picker, searchText2, input, picker.__onInsert);
   }
   function insertMention(input, noteId, onUpdate) {
     const picker = mentionPickerRef.current;
@@ -3516,22 +3554,113 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     setSelectedTag(null);
     setCurrentDate(new Date(note.createdAt));
   }
+  const resolveCacheRef = React.useRef(/* @__PURE__ */ new Map());
+  function evaluateCondition(cond, note) {
+    const content = note.content.toLowerCase();
+    const title = (note.title || "").toLowerCase();
+    switch (cond.field) {
+      case "content": {
+        const val = (cond.value || "").toLowerCase();
+        if (!val) return true;
+        switch (cond.operator) {
+          case "contains":
+            return content.includes(val) || title.includes(val);
+          case "not_contains":
+            return !content.includes(val) && !title.includes(val);
+          case "equals":
+            return content === val || title === val;
+          default:
+            return true;
+        }
+      }
+      case "tag":
+      case "tag_include": {
+        const tags = Array.isArray(cond.value) ? cond.value : [];
+        if (tags.length === 0) return true;
+        if (cond.operator === "not_contains") return !tags.some((t2) => note.tags.includes(t2));
+        return tags.some((t2) => note.tags.includes(t2));
+      }
+      case "tag_exclude": {
+        const tags = Array.isArray(cond.value) ? cond.value : [];
+        if (tags.length === 0) return true;
+        return !tags.some((t2) => note.tags.includes(t2));
+      }
+      case "date": {
+        const dateVal = cond.value;
+        if (!dateVal) return true;
+        const noteTime = note.createdAt;
+        if (cond.operator === "after") {
+          const t2 = new Date(dateVal).getTime();
+          return !isNaN(t2) && noteTime >= t2;
+        }
+        if (cond.operator === "before") {
+          const t2 = new Date(dateVal).getTime() + 864e5;
+          return !isNaN(t2) && noteTime <= t2;
+        }
+        if (cond.operator === "between" && Array.isArray(dateVal)) {
+          const t0 = dateVal[0] ? new Date(dateVal[0]).getTime() : 0;
+          const t1 = dateVal[1] ? new Date(dateVal[1]).getTime() + 864e5 : Infinity;
+          return noteTime >= t0 && noteTime <= t1;
+        }
+        return true;
+      }
+      case "time_range": {
+        const rangeVal = cond.value;
+        if (!rangeVal) return true;
+        const match = rangeVal.match(/^(\d+)(d|M|y)$/);
+        if (!match) return true;
+        const num = parseInt(match[1]);
+        const unit = match[2];
+        const now = Date.now();
+        let startTime;
+        if (unit === "d") {
+          startTime = now - num * 864e5;
+        } else if (unit === "M") {
+          const d = /* @__PURE__ */ new Date();
+          d.setMonth(d.getMonth() - num);
+          startTime = d.getTime();
+        } else if (unit === "y") {
+          const d = /* @__PURE__ */ new Date();
+          d.setFullYear(d.getFullYear() - num);
+          startTime = d.getTime();
+        } else {
+          return true;
+        }
+        return note.createdAt >= startTime;
+      }
+      case "has_image": {
+        const hasImg = /!\[.*?\]\(.*?\)/.test(note.content);
+        return cond.operator === "yes" ? hasImg : !hasImg;
+      }
+      case "has_reference": {
+        const hasRef = /\[\[.*?\]\]/.test(note.content);
+        return cond.operator === "yes" ? hasRef : !hasRef;
+      }
+      default:
+        return true;
+    }
+  }
   function resolveAssetUrl(rawSrc) {
-    if (rawSrc.startsWith("http://") || rawSrc.startsWith("https://") || rawSrc.startsWith("data:")) {
+    const cached = resolveCacheRef.current.get(rawSrc);
+    if (cached !== void 0) return cached;
+    if (rawSrc.startsWith("http://") || rawSrc.startsWith("https://") || rawSrc.startsWith("data:") || rawSrc.startsWith("file://") || rawSrc.startsWith("file:")) {
+      resolveCacheRef.current.set(rawSrc, rawSrc);
       return rawSrc;
     }
     const repoDir = orca.state.repoDir;
     const dataDir = orca.state.dataDir;
-    console.log("[mcard] resolveAssetUrl rawSrc:", rawSrc, "repoDir:", repoDir, "dataDir:", dataDir);
     const baseDir = repoDir || dataDir;
-    if (!baseDir) return rawSrc;
+    if (!baseDir) {
+      resolveCacheRef.current.set(rawSrc, rawSrc);
+      return rawSrc;
+    }
     let relPath = rawSrc.replace(/^\.\//, "");
     if (!relPath.startsWith("assets/") && !relPath.startsWith("assets\\")) {
       relPath = "assets/" + relPath;
     }
     const fullPath = baseDir.replace(/\\/g, "/") + "/" + relPath;
     const fileUrl = "file:///" + fullPath.replace(/^\//, "");
-    console.log("[mcard] resolved fileUrl:", fileUrl);
+    resolveCacheRef.current.set(rawSrc, fileUrl);
     return fileUrl;
   }
   function showImagePreview(imgSrc) {
@@ -3635,8 +3764,14 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
     };
     document.addEventListener("keydown", escHandler);
   }
+  const noteHtmlCacheRef = React.useRef(/* @__PURE__ */ new Map());
   function renderNoteContent(note) {
-    const html = renderNoteHtml(note.content, resolveAssetUrl, { notes });
+    const cacheKey = `${note.id}::${note.content}`;
+    let html = noteHtmlCacheRef.current.get(cacheKey);
+    if (html === void 0) {
+      html = renderNoteHtml(note.content, resolveAssetUrl, { notes });
+      noteHtmlCacheRef.current.set(cacheKey, html);
+    }
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
@@ -3817,16 +3952,6 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
           ) })
         ] }),
         tab !== "stats" && tab !== "settings" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `mcard-info-sidebar${sidebarCollapsed ? " collapsed" : ""}`, children: [
-          tab === "shuoshuo" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-search-box", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              type: "text",
-              className: "mcard-search-input",
-              placeholder: t("Search notes..."),
-              value: searchText,
-              onChange: (e) => setSearchText(e.target.value)
-            }
-          ) }),
           tab === "shuoshuo" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-stats", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-stat-item", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-stat-num", children: notes.length }),
@@ -3915,6 +4040,40 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
                 }
               )
             ] }),
+            (() => {
+              const pinnedExprs = searchExprs.filter((e) => e.pinned);
+              if (pinnedExprs.length === 0) return null;
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-section-title", children: "钉住的检索式" }),
+                pinnedExprs.map((expr) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "mcard-menu-item",
+                    style: { cursor: "pointer" },
+                    onClick: () => {
+                      setShowSearchExprModal(true);
+                      setActiveExprId(expr.id);
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-menu-icon", children: "📌" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-menu-text", children: expr.name }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-menu-count", children: (() => {
+                        let r = [...notes];
+                        if (!settings.showMemoNotesInList) r = r.filter((n) => !n.parent_ids || n.parent_ids.length === 0);
+                        if (expr.conditions.length > 0) {
+                          r = r.filter((n) => {
+                            const cr = expr.conditions.map((c) => evaluateCondition(c, n));
+                            return expr.matchMode === "and" ? cr.every(Boolean) : cr.some(Boolean);
+                          });
+                        }
+                        return r.length;
+                      })() })
+                    ]
+                  },
+                  expr.id
+                ))
+              ] });
+            })(),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-section-title", children: "全部标签" }),
             allTags.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12, color: "var(--orca-color-gray-5, #999)", padding: "0 4px" }, children: "暂无标签" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-tag-list", children: allTags.map((tag) => {
               const count = notes.filter((n) => n.tags.includes(tag)).length;
@@ -3972,6 +4131,59 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-main", children: [
+          tab === "shuoshuo" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 10, margin: "8px 24px 0", flexShrink: 0 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-search-box", style: { marginBottom: 0, flex: 1 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                type: "text",
+                className: "mcard-search-input",
+                placeholder: t("Search notes..."),
+                value: searchText,
+                onChange: (e) => setSearchText(e.target.value)
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                className: "mcard-close-btn",
+                title: "检索式",
+                onClick: () => {
+                  setShowSearchExprModal(true);
+                  setEditingExpr(null);
+                  setActiveExprId(null);
+                  setShowExprBuilder(false);
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", width: "14", height: "14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 3h18v2l-7 7.5V21l-4-2.5v-8L3 5V3z" }) })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                className: "mcard-close-btn",
+                title: "关闭面板",
+                onClick: () => {
+                  try {
+                    if (panelId) {
+                      orca.nav.close(panelId);
+                    } else {
+                      const panels = orca.state.panels;
+                      for (const [pid, panel] of Object.entries(panels)) {
+                        if (panel.view === "mcard.panel") {
+                          orca.nav.close(pid);
+                          break;
+                        }
+                      }
+                    }
+                  } catch {
+                  }
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", width: "14", height: "14", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "18", y1: "6", x2: "6", y2: "18" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "6", y1: "6", x2: "18", y2: "18" })
+                ] })
+              }
+            )
+          ] }),
           tab === "shuoshuo" && shuoshuoView === "all" && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-input-area", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `mcard-input-box ${captureText ? "focused" : ""}`, children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-edit-relation-row", children: [
@@ -4826,7 +5038,8 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
               },
               onInboxSync: handleInboxSync,
               onInboxFullSyncChange: setInboxFullSync,
-              onDeleteAll: handleDeleteAll
+              onDeleteAll: handleDeleteAll,
+              onImportNotes: handleImportNotes
             }
           )
         ] }),
@@ -4982,9 +5195,8 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
                         }).slice(0, 8);
                         if (filteredAtNotes.length > 0) {
                           showMentionPicker(ta, (inp, nid) => {
-                            var _a;
                             const target = notes.find((n) => n.id === nid);
-                            const refText = (target == null ? void 0 : target.title) || ((_a = target == null ? void 0 : target.content) == null ? void 0 : _a.slice(0, 18)) || nid;
+                            const refText = (target == null ? void 0 : target.title) || nid;
                             const start = mentionTriggerPosRef.current;
                             const text = inp.value;
                             const beforeAt = text.substring(0, start - filter.length - 1);
@@ -5129,7 +5341,12 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
                 filteredChildCards.map((childNote) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-child-card", onClick: () => setDetailNote(childNote), children: [
                   childNote.title && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-child-card-title", children: childNote.title }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-child-card-content", children: (() => {
-                    const html = renderNoteHtml(childNote.content, resolveAssetUrl, { hideTags: true, notes });
+                    const cacheKey = `${childNote.id}::hide::${childNote.content}`;
+                    let html = noteHtmlCacheRef.current.get(cacheKey);
+                    if (html === void 0) {
+                      html = renderNoteHtml(childNote.content, resolveAssetUrl, { hideTags: true, notes });
+                      noteHtmlCacheRef.current.set(cacheKey, html);
+                    }
                     return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { dangerouslySetInnerHTML: { __html: html } });
                   })() }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-child-card-footer", children: [
@@ -5144,6 +5361,663 @@ function McardPanel({ pluginName: pluginName2, settings, onSettingsChange }) {
               ] })
             ] });
           })()
+        ] }) }),
+        showSearchExprModal && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-overlay", onClick: () => {
+          setShowSearchExprModal(false);
+          setEditingExpr(null);
+          setActiveExprId(null);
+          setShowExprBuilder(false);
+          setExprMenuId(null);
+        }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-panel", onClick: (e) => e.stopPropagation(), style: { maxWidth: 780, height: "65vh", display: "flex", flexDirection: "column" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-header", style: { flexShrink: 0 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "mcard-detail-back", onClick: () => {
+              setShowSearchExprModal(false);
+              setEditingExpr(null);
+              setActiveExprId(null);
+              setShowExprBuilder(false);
+              setTagSearchMap({});
+              setExprMenuId(null);
+            }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { viewBox: "0 0 24 24", fill: "currentColor", width: "20", height: "20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" }) }),
+              "返回"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-meta", children: "检索式" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-expr-bottom", style: { flex: 1, borderTop: "none" }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-expr-sidebar", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { padding: "10px 10px 8px", display: "flex", justifyContent: "space-between", alignItems: "center" }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11, fontWeight: 600, color: "var(--orca-color-gray-6, #777)", textTransform: "uppercase", letterSpacing: "0.05em" }, children: "已保存" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    style: { padding: "2px 8px", fontSize: 11, border: "1px dashed var(--orca-color-gray-3, #e0e0e0)", borderRadius: 6, background: "transparent", cursor: "pointer", color: "var(--orca-color-text-2, #555)" },
+                    onClick: () => {
+                      setEditingExpr({ id: "", name: "", matchMode: "and", conditions: [], pinned: false });
+                      setShowExprBuilder(true);
+                    },
+                    children: "+ 新建"
+                  }
+                )
+              ] }),
+              searchExprs.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { padding: "20px 10px", textAlign: "center", fontSize: 12, color: "var(--orca-color-gray-5, #999)" }, children: "暂无检索式" }) : searchExprs.map((expr) => {
+                const exprCount = (() => {
+                  let r = [...notes];
+                  if (!settings.showMemoNotesInList) r = r.filter((n) => !n.parent_ids || n.parent_ids.length === 0);
+                  if (expr.conditions.length > 0) {
+                    r = r.filter((n) => {
+                      const cr = expr.conditions.map((c) => evaluateCondition(c, n));
+                      return expr.matchMode === "and" ? cr.every(Boolean) : cr.some(Boolean);
+                    });
+                  }
+                  return r.length;
+                })();
+                return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: `mcard-expr-sidebar-item ${activeExprId === expr.id ? "active" : ""}`,
+                    onClick: () => {
+                      setActiveExprId(activeExprId === expr.id ? null : expr.id);
+                      setExprTagIncluded([]);
+                      setExprTagExcluded([]);
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-expr-sidebar-item-name", children: expr.name }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-menu-count", style: { fontSize: 10, marginLeft: 4 }, children: exprCount }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-expr-sidebar-item-actions", style: { position: "relative" }, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "更多", onClick: (e) => {
+                          e.stopPropagation();
+                          setExprMenuId(exprMenuId === expr.id ? null : expr.id);
+                        }, style: { fontSize: 14, lineHeight: 1 }, children: "⋯" }),
+                        exprMenuId === expr.id && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "div",
+                          {
+                            style: { position: "absolute", right: 0, top: "100%", zIndex: 100, background: "var(--orca-color-bg-1, #fff)", border: "1px solid var(--orca-color-gray-3, #e0e0e0)", borderRadius: 6, boxShadow: "0 4px 12px rgba(0,0,0,0.12)", minWidth: 100, padding: "4px 0" },
+                            onClick: (e) => e.stopPropagation(),
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                "div",
+                                {
+                                  style: { padding: "6px 12px", cursor: "pointer", fontSize: 12, display: "flex", alignItems: "center", gap: 6, color: expr.pinned ? "var(--mcard-accent, #4a90d9)" : "var(--orca-color-text-1, #333)" },
+                                  onClick: () => {
+                                    const updated = { ...expr, pinned: !expr.pinned };
+                                    setSearchExprs((prev) => prev.map((e2) => e2.id === expr.id ? updated : e2));
+                                    setExprMenuId(null);
+                                  },
+                                  children: [
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "📌" }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: expr.pinned ? "取消钉住" : "钉住" })
+                                  ]
+                                }
+                              ),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                "div",
+                                {
+                                  style: { padding: "6px 12px", cursor: "pointer", fontSize: 12, display: "flex", alignItems: "center", gap: 6, color: "var(--orca-color-text-1, #333)" },
+                                  onClick: () => {
+                                    setEditingExpr({ ...expr });
+                                    setShowExprBuilder(true);
+                                    setExprMenuId(null);
+                                  },
+                                  children: [
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "✎" }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "编辑" })
+                                  ]
+                                }
+                              ),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                "div",
+                                {
+                                  style: { padding: "6px 12px", cursor: "pointer", fontSize: 12, display: "flex", alignItems: "center", gap: 6, color: "var(--orca-color-text-1, #333)" },
+                                  onClick: () => {
+                                    const exprResult = (() => {
+                                      let r = [...notes];
+                                      if (!settings.showMemoNotesInList) r = r.filter((n) => !n.parent_ids || n.parent_ids.length === 0);
+                                      if (expr.conditions.length > 0) {
+                                        r = r.filter((n) => {
+                                          const cr = expr.conditions.map((c) => evaluateCondition(c, n));
+                                          return expr.matchMode === "and" ? cr.every(Boolean) : cr.some(Boolean);
+                                        });
+                                      }
+                                      return r;
+                                    })();
+                                    const exportData = exprResult.map((n) => ({ id: n.id, title: n.title || "", content: n.content, tags: n.tags, createdAt: new Date(n.createdAt).toISOString() }));
+                                    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+                                    const url = URL.createObjectURL(blob);
+                                    const a = document.createElement("a");
+                                    a.href = url;
+                                    a.download = `${expr.name}_export.json`;
+                                    a.click();
+                                    URL.revokeObjectURL(url);
+                                    setExprMenuId(null);
+                                  },
+                                  children: [
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "📤" }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "导出" })
+                                  ]
+                                }
+                              ),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { height: 1, background: "var(--orca-color-gray-3, #e0e0e0)", margin: "4px 0" } }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                "div",
+                                {
+                                  style: { padding: "6px 12px", cursor: "pointer", fontSize: 12, display: "flex", alignItems: "center", gap: 6, color: "var(--orca-color-dangerous-5, #e74c3c)" },
+                                  onClick: () => {
+                                    setSearchExprs((prev) => prev.filter((e2) => e2.id !== expr.id));
+                                    if (activeExprId === expr.id) setActiveExprId(null);
+                                    setExprMenuId(null);
+                                  },
+                                  children: [
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "🗑" }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "删除" })
+                                  ]
+                                }
+                              )
+                            ]
+                          }
+                        )
+                      ] })
+                    ]
+                  },
+                  expr.id
+                );
+              })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-expr-main", style: { padding: "0 16px" }, children: activeExprId ? (() => {
+              const expr = searchExprs.find((e) => e.id === activeExprId);
+              if (!expr) return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-empty", children: "未找到检索式" });
+              let result = [...notes];
+              if (!settings.showMemoNotesInList) {
+                result = result.filter((n) => !n.parent_ids || n.parent_ids.length === 0);
+              }
+              if (expr.conditions.length > 0) {
+                result = result.filter((n) => {
+                  const condResults = expr.conditions.map((c) => evaluateCondition(c, n));
+                  return expr.matchMode === "and" ? condResults.every(Boolean) : condResults.some(Boolean);
+                });
+              }
+              result.sort((a, b) => b.createdAt - a.createdAt);
+              const filteredResult = result.filter((n) => {
+                if (exprTagIncluded.length > 0 && !exprTagIncluded.every((t2) => n.tags.includes(t2))) return false;
+                if (exprTagExcluded.length > 0 && exprTagExcluded.some((t2) => n.tags.includes(t2))) return false;
+                return true;
+              });
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0 8px", borderBottom: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", marginBottom: 8 }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexWrap: "wrap", gap: 4, flex: 1, alignItems: "center" }, children: [
+                    (exprTagIncluded.length > 0 || exprTagExcluded.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "span",
+                      {
+                        className: "mcard-detail-tag mcard-detail-tag-active",
+                        style: { fontSize: 11 },
+                        onClick: () => {
+                          setExprTagIncluded([]);
+                          setExprTagExcluded([]);
+                        },
+                        children: [
+                          "全部 (",
+                          result.length,
+                          ")"
+                        ]
+                      }
+                    ),
+                    (() => {
+                      const tagMap = /* @__PURE__ */ new Map();
+                      result.forEach((n) => n.tags.forEach((t2) => tagMap.set(t2, (tagMap.get(t2) || 0) + 1)));
+                      const sortedTags = [...tagMap.entries()].sort((a, b) => b[1] - a[1]);
+                      return sortedTags.map(([tag, count]) => {
+                        const isIncluded = exprTagIncluded.includes(tag);
+                        const isExcluded = exprTagExcluded.includes(tag);
+                        const cls = isIncluded ? "mcard-detail-tag mcard-detail-tag-active" : isExcluded ? "mcard-detail-tag mcard-detail-tag-excluded" : "mcard-detail-tag";
+                        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "span",
+                          {
+                            className: cls,
+                            style: { fontSize: 11, cursor: "pointer" },
+                            onClick: () => {
+                              if (isExcluded) {
+                                setExprTagExcluded(exprTagExcluded.filter((t2) => t2 !== tag));
+                              }
+                              setExprTagIncluded(isIncluded ? exprTagIncluded.filter((t2) => t2 !== tag) : [...exprTagIncluded, tag]);
+                            },
+                            onContextMenu: (e) => {
+                              e.preventDefault();
+                              if (isIncluded) {
+                                setExprTagIncluded(exprTagIncluded.filter((t2) => t2 !== tag));
+                              }
+                              setExprTagExcluded(isExcluded ? exprTagExcluded.filter((t2) => t2 !== tag) : [...exprTagExcluded, tag]);
+                            },
+                            title: isExcluded ? "点击取消排除" : "点击包含 | 右键排除",
+                            children: [
+                              "#",
+                              tag,
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 9, opacity: 0.6, marginLeft: 2 }, children: count })
+                            ]
+                          },
+                          tag
+                        );
+                      });
+                    })()
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", gap: 6, flexShrink: 0 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      className: "mcard-detail-action-btn",
+                      style: { fontSize: 11, padding: "2px 8px" },
+                      onClick: () => setSearchExprResultGrid(!searchExprResultGrid),
+                      children: searchExprResultGrid ? "列表" : "卡片"
+                    }
+                  ) })
+                ] }),
+                filteredResult.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-empty", children: "无匹配卡片" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `mcard-detail-child-cards-list ${searchExprResultGrid ? "mcard-child-grid" : ""}`, children: filteredResult.map((note) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "mcard-detail-child-card",
+                    onClick: () => {
+                      setShowSearchExprModal(false);
+                      setDetailNote(note);
+                    },
+                    children: [
+                      note.title && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-child-card-title", children: note.title }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-child-card-content", children: (() => {
+                        const cacheKey = `${note.id}::hide::${note.content}`;
+                        let html = noteHtmlCacheRef.current.get(cacheKey);
+                        if (html === void 0) {
+                          html = renderNoteHtml(note.content, resolveAssetUrl, { hideTags: true, notes });
+                          noteHtmlCacheRef.current.set(cacheKey, html);
+                        }
+                        return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { dangerouslySetInnerHTML: { __html: html } });
+                      })() }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-child-card-footer", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-detail-child-card-date", children: formatAgo(note.createdAt) }),
+                        note.tags.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-detail-child-card-tags", children: note.tags.map((t2) => `#${t2}`).join(" ") })
+                      ] })
+                    ]
+                  },
+                  note.id
+                )) })
+              ] });
+            })() : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-empty", style: { paddingTop: 40 }, children: "从左侧选择一个检索式查看结果" }) })
+          ] })
+        ] }) }),
+        showExprBuilder && editingExpr && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-overlay", onClick: () => {
+          setShowExprBuilder(false);
+          setEditingExpr(null);
+        }, style: { zIndex: 10001 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-panel", onClick: (e) => e.stopPropagation(), style: { maxWidth: 500, maxHeight: "80vh" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-detail-header", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "mcard-detail-back", onClick: () => {
+              setShowExprBuilder(false);
+              setEditingExpr(null);
+            }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { viewBox: "0 0 24 24", fill: "currentColor", width: "20", height: "20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" }) }),
+              "返回"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-detail-meta", children: editingExpr.id ? "编辑检索式" : "新建检索式" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { padding: "0 16px 16px", overflowY: "auto" }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "chart-filter-option", style: { marginTop: 12 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { children: "检索式命名" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  className: "mcard-edit-title-input",
+                  type: "text",
+                  placeholder: "命名此检索式",
+                  value: editingExpr.name,
+                  onChange: (e) => setEditingExpr({ ...editingExpr, name: e.target.value })
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "chart-filter-option", style: { marginTop: 12 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { children: "匹配模式" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-match-mode", style: { marginTop: 4 }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    className: `mcard-match-mode-btn ${editingExpr.matchMode === "and" ? "active" : ""}`,
+                    onClick: () => setEditingExpr({ ...editingExpr, matchMode: "and" }),
+                    children: "全部满足"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    className: `mcard-match-mode-btn ${editingExpr.matchMode === "or" ? "active" : ""}`,
+                    onClick: () => setEditingExpr({ ...editingExpr, matchMode: "or" }),
+                    children: "满足任一"
+                  }
+                )
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "chart-filter-option", style: { marginTop: 12 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { children: "筛选条件" }),
+              editingExpr.conditions.map((cond, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginTop: 6, padding: 8, border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 6 }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 6, alignItems: "center" }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "select",
+                    {
+                      value: cond.field,
+                      style: { flex: 3, padding: "4px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newField = e.target.value;
+                        const newConditions = [...editingExpr.conditions];
+                        let newOp = "contains";
+                        let newVal = "";
+                        if (newField === "tag") {
+                          newOp = "contains";
+                          newVal = [];
+                        } else if (newField === "date") {
+                          newOp = "after";
+                          newVal = "";
+                        } else if (newField === "time_range") {
+                          newOp = "contains";
+                          newVal = "7d";
+                        } else if (newField === "has_image" || newField === "has_reference") {
+                          newOp = "yes";
+                          newVal = "";
+                        }
+                        newConditions[idx] = { field: newField, operator: newOp, value: newVal };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "content", children: "内容" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "tag", children: "标签" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "date", children: "日期" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "time_range", children: "时间范围" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "has_image", children: "图片" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "has_reference", children: "引用" })
+                      ]
+                    }
+                  ),
+                  cond.field === "content" && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "select",
+                    {
+                      value: cond.operator,
+                      style: { flex: 2, padding: "4px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        newConditions[idx] = { ...cond, operator: e.target.value };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "contains", children: "包含" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "not_contains", children: "不包含" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "equals", children: "等于" })
+                      ]
+                    }
+                  ),
+                  cond.field === "date" && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "select",
+                    {
+                      value: cond.operator,
+                      style: { flex: 2, padding: "4px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        const newOp = e.target.value;
+                        newConditions[idx] = { ...cond, operator: newOp, value: newOp === "between" ? ["", ""] : "" };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "after", children: "之后" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "before", children: "之前" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "between", children: "范围" })
+                      ]
+                    }
+                  ),
+                  (cond.field === "has_image" || cond.field === "has_reference") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "select",
+                    {
+                      value: cond.operator,
+                      style: { flex: 2, padding: "4px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        newConditions[idx] = { ...cond, operator: e.target.value };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "yes", children: "有" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "no", children: "无" })
+                      ]
+                    }
+                  ),
+                  cond.field === "tag" && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "select",
+                    {
+                      value: cond.operator,
+                      style: { flex: 2, padding: "4px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        newConditions[idx] = { ...cond, operator: e.target.value };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "contains", children: "包含" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "not_contains", children: "不包含" })
+                      ]
+                    }
+                  ),
+                  (cond.field === "tag_include" || cond.field === "tag_exclude") && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { flex: 2, fontSize: 12, color: "var(--orca-color-gray-5, #999)" }, children: "选择标签" }),
+                  cond.field === "tag" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "input",
+                    {
+                      type: "text",
+                      placeholder: "搜索标签...",
+                      value: tagSearchMap[idx] || "",
+                      style: { flex: 4, padding: "4px 8px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => setTagSearchMap({ ...tagSearchMap, [idx]: e.target.value })
+                    }
+                  ),
+                  cond.field === "content" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "input",
+                    {
+                      type: "text",
+                      placeholder: "...",
+                      value: cond.value || "",
+                      style: { flex: 4, padding: "4px 8px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        newConditions[idx] = { ...cond, value: e.target.value };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      }
+                    }
+                  ),
+                  cond.field === "date" && cond.operator === "between" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { flex: 4, display: "flex", gap: 4, alignItems: "center" }, children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        type: "date",
+                        value: Array.isArray(cond.value) ? cond.value[0] || "" : "",
+                        style: { flex: 1, padding: "3px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 11, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                        onChange: (e) => {
+                          const newConditions = [...editingExpr.conditions];
+                          const arr = Array.isArray(cond.value) ? [...cond.value] : ["", ""];
+                          arr[0] = e.target.value;
+                          newConditions[idx] = { ...cond, value: arr };
+                          setEditingExpr({ ...editingExpr, conditions: newConditions });
+                        }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11, color: "var(--orca-color-gray-5, #999)" }, children: "~" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        type: "date",
+                        value: Array.isArray(cond.value) ? cond.value[1] || "" : "",
+                        style: { flex: 1, padding: "3px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 11, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                        onChange: (e) => {
+                          const newConditions = [...editingExpr.conditions];
+                          const arr = Array.isArray(cond.value) ? [...cond.value] : ["", ""];
+                          arr[1] = e.target.value;
+                          newConditions[idx] = { ...cond, value: arr };
+                          setEditingExpr({ ...editingExpr, conditions: newConditions });
+                        }
+                      }
+                    )
+                  ] }),
+                  cond.field === "date" && cond.operator !== "between" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "input",
+                    {
+                      type: "date",
+                      value: typeof cond.value === "string" ? cond.value : "",
+                      style: { flex: 4, padding: "3px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 11, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        newConditions[idx] = { ...cond, value: e.target.value };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      }
+                    }
+                  ),
+                  (cond.field === "has_image" || cond.field === "has_reference") && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { flex: 4, fontSize: 12, color: "var(--orca-color-gray-5, #999)" }, children: "-" }),
+                  cond.field === "time_range" && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "select",
+                    {
+                      value: cond.value || "7d",
+                      style: { flex: 4, padding: "4px 6px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 12, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none" },
+                      onChange: (e) => {
+                        const newConditions = [...editingExpr.conditions];
+                        newConditions[idx] = { ...cond, value: e.target.value };
+                        setEditingExpr({ ...editingExpr, conditions: newConditions });
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "1d", children: "最近1天" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "7d", children: "最近7天" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "14d", children: "最近14天" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "30d", children: "最近30天" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "90d", children: "最近3个月" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "180d", children: "最近6个月" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "365d", children: "最近1年" })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      style: { padding: "2px 6px", border: "none", background: "transparent", cursor: "pointer", color: "var(--orca-color-dangerous-5, #e74c3c)", fontSize: 14, flexShrink: 0 },
+                      onClick: () => setEditingExpr({ ...editingExpr, conditions: editingExpr.conditions.filter((_, i) => i !== idx) }),
+                      children: "×"
+                    }
+                  )
+                ] }),
+                (cond.field === "tag_include" || cond.field === "tag_exclude") && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginTop: 4 }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "input",
+                    {
+                      type: "text",
+                      placeholder: "搜索标签...",
+                      value: tagSearchMap[idx] || "",
+                      style: { width: "100%", padding: "4px 8px", border: "1px solid color-mix(in srgb, var(--orca-color-gray-3, #e0e0e0) 70%, transparent)", borderRadius: 4, fontSize: 11, background: "var(--orca-color-bg-1, #fff)", color: "var(--orca-color-text-1, #333)", outline: "none", boxSizing: "border-box", marginBottom: 6 },
+                      onChange: (e) => setTagSearchMap({ ...tagSearchMap, [idx]: e.target.value })
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexWrap: "wrap", gap: 4, maxHeight: 120, overflowY: "auto" }, children: [
+                    allTags.filter((tag) => !tagSearchMap[idx] || tag.includes(tagSearchMap[idx])).map((tag) => {
+                      const selected = Array.isArray(cond.value) && cond.value.includes(tag);
+                      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "span",
+                        {
+                          className: `mcard-detail-tag ${selected ? "mcard-detail-tag-active" : ""}`,
+                          onClick: () => {
+                            const newConditions = [...editingExpr.conditions];
+                            const arr = Array.isArray(cond.value) ? [...cond.value] : [];
+                            newConditions[idx] = { ...cond, value: selected ? arr.filter((t2) => t2 !== tag) : [...arr, tag] };
+                            setEditingExpr({ ...editingExpr, conditions: newConditions });
+                          },
+                          children: [
+                            "#",
+                            tag
+                          ]
+                        },
+                        tag
+                      );
+                    }),
+                    allTags.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, color: "var(--orca-color-gray-5, #999)" }, children: "暂无标签" })
+                  ] })
+                ] }),
+                cond.field === "tag" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 4 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexWrap: "wrap", gap: 4, maxHeight: 120, overflowY: "auto" }, children: [
+                  allTags.filter((tag) => !tagSearchMap[idx] || tag.includes(tagSearchMap[idx])).map((tag) => {
+                    const selected = Array.isArray(cond.value) && cond.value.includes(tag);
+                    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "span",
+                      {
+                        className: `mcard-detail-tag ${selected ? "mcard-detail-tag-active" : ""}`,
+                        onClick: () => {
+                          const newConditions = [...editingExpr.conditions];
+                          const arr = Array.isArray(cond.value) ? [...cond.value] : [];
+                          newConditions[idx] = { ...cond, value: selected ? arr.filter((t2) => t2 !== tag) : [...arr, tag] };
+                          setEditingExpr({ ...editingExpr, conditions: newConditions });
+                        },
+                        children: [
+                          "#",
+                          tag
+                        ]
+                      },
+                      tag
+                    );
+                  }),
+                  allTags.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, color: "var(--orca-color-gray-5, #999)" }, children: "暂无标签" })
+                ] }) })
+              ] }, idx)),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  style: { marginTop: 6, padding: "4px 10px", fontSize: 11, border: "1px dashed var(--orca-color-gray-3, #e0e0e0)", borderRadius: 6, background: "transparent", cursor: "pointer", color: "var(--orca-color-text-2, #555)", width: "100%" },
+                  onClick: () => setEditingExpr({ ...editingExpr, conditions: [...editingExpr.conditions, { field: "content", operator: "contains", value: "" }] }),
+                  children: "+ 添加条件"
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, justifyContent: "flex-end", marginTop: 16 }, children: [
+              editingExpr.id && searchExprs.find((e) => e.id === editingExpr.id) && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  className: "mcard-detail-action-btn danger",
+                  onClick: () => {
+                    setSearchExprs((prev) => prev.filter((e) => e.id !== editingExpr.id));
+                    setShowExprBuilder(false);
+                    setEditingExpr(null);
+                    if (activeExprId === editingExpr.id) setActiveExprId(null);
+                  },
+                  children: "删除"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  className: "mcard-detail-action-btn",
+                  onClick: () => {
+                    if (!editingExpr.name.trim()) return;
+                    const existing = searchExprs.find((e) => e.id === editingExpr.id);
+                    if (existing) {
+                      setSearchExprs((prev) => prev.map((e) => e.id === editingExpr.id ? editingExpr : e));
+                    } else {
+                      const newExpr = { ...editingExpr, id: `expr-${Date.now()}-${Math.random().toString(36).slice(2, 6)}` };
+                      setSearchExprs((prev) => [...prev, newExpr]);
+                      setEditingExpr(newExpr);
+                    }
+                    setShowExprBuilder(false);
+                  },
+                  children: "保存"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  className: "mcard-detail-action-btn",
+                  onClick: () => {
+                    if (!editingExpr.id) {
+                      const newExpr = { ...editingExpr, id: `expr-${Date.now()}-${Math.random().toString(36).slice(2, 6)}` };
+                      setSearchExprs((prev) => [...prev, newExpr]);
+                      setActiveExprId(newExpr.id);
+                      setEditingExpr(newExpr);
+                    } else {
+                      setActiveExprId(editingExpr.id);
+                    }
+                    setShowExprBuilder(false);
+                  },
+                  children: "保存并执行"
+                }
+              )
+            ] })
+          ] })
         ] }) }),
         tagMenuTag && tagMenuPos && /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
@@ -5875,7 +6749,8 @@ function SettingsView({
   onInboxConfigChange,
   onInboxSync,
   onInboxFullSyncChange,
-  onDeleteAll
+  onDeleteAll,
+  onImportNotes
 }) {
   const [activeGroup, setActiveGroup] = React.useState("view");
   const [fontSizeInput, setFontSizeInput] = React.useState(String(settings.fontSize));
@@ -5904,25 +6779,6 @@ function SettingsView({
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-settings-content", children: [
       activeGroup === "view" && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-settings-section", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-subtitle", children: "展示样式" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-desc", children: "选择笔记列表的展示方式" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-settings-row", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mcard-settings-label", children: "布局方式" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "select",
-              {
-                className: "mcard-settings-select",
-                value: settings.viewStyle,
-                onChange: (e) => onChange({ viewStyle: e.target.value }),
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "card", children: "平铺布局" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "list", children: "列表布局" })
-                ]
-              }
-            )
-          ] })
-        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-settings-section", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-subtitle", children: "紧凑模式" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-desc", children: "开启后，视图中的笔记间距更紧凑" }),
@@ -6256,6 +7112,71 @@ function SettingsView({
           ) })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-settings-section", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-subtitle", children: "导入数据" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-desc", children: "从 JSON 文件导入笔记，自动跳过重复数据" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              className: "mcard-settings-btn",
+              onClick: () => {
+                const input = document.createElement("input");
+                input.type = "file";
+                input.accept = ".json";
+                input.onchange = () => {
+                  var _a;
+                  const file = (_a = input.files) == null ? void 0 : _a[0];
+                  if (!file) return;
+                  const reader = new FileReader();
+                  reader.onload = async (ev) => {
+                    var _a2;
+                    try {
+                      const text = (_a2 = ev.target) == null ? void 0 : _a2.result;
+                      if (!text) {
+                        orca.notify("error", "文件内容为空");
+                        return;
+                      }
+                      const imported = JSON.parse(text);
+                      if (!Array.isArray(imported)) {
+                        orca.notify("error", "无效的 JSON 格式，需要数组");
+                        return;
+                      }
+                      const validNotes = [];
+                      for (const item of imported) {
+                        if (!item.id || !item.content) continue;
+                        validNotes.push({
+                          id: item.id,
+                          blockId: item.blockId || 0,
+                          content: item.content,
+                          tags: Array.isArray(item.tags) ? item.tags : extractTags$1(item.content),
+                          createdAt: item.createdAt || Date.now(),
+                          updatedAt: item.updatedAt || Date.now(),
+                          pinned: item.pinned || false,
+                          parent_ids: item.parent_ids || void 0,
+                          title: item.title || void 0
+                        });
+                      }
+                      if (validNotes.length === 0) {
+                        orca.notify("info", "没有有效的笔记数据");
+                        return;
+                      }
+                      await onImportNotes(validNotes);
+                    } catch (e) {
+                      console.error("[mcard] import error:", e);
+                      orca.notify("error", "导入失败：" + (e instanceof Error ? e.message : "JSON 解析错误"));
+                    }
+                  };
+                  reader.onerror = () => {
+                    orca.notify("error", "文件读取失败");
+                  };
+                  reader.readAsText(file, "utf-8");
+                };
+                input.click();
+              },
+              children: "导入 JSON"
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mcard-settings-section", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-subtitle", children: "导出数据" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mcard-settings-desc", children: "将笔记数据导出为 JSON 或 Markdown 格式" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, marginTop: 8 }, children: [
@@ -6349,10 +7270,18 @@ function injectStylesOnce() {
   document.head.appendChild(style);
 }
 function mergedSettings() {
+  try {
+    const raw = localStorage.getItem(`mcard_settings_${pluginName}`);
+    if (raw) {
+      const saved = JSON.parse(raw);
+      return { ...DEFAULT_SETTINGS, ...saved };
+    }
+  } catch {
+  }
   const state = orca.state.plugins[pluginName] || {};
   return { ...DEFAULT_SETTINGS, ...state.settings || {} };
 }
-function McardPanelRenderer() {
+function McardPanelRenderer(props) {
   const { useEffect, useState } = window.React;
   const [settings, setSettings] = useState(mergedSettings());
   useEffect(() => {
@@ -6366,11 +7295,15 @@ function McardPanelRenderer() {
     const merged = { ...settings, ...patch };
     setSettings(merged);
     try {
+      localStorage.setItem(`mcard_settings_${pluginName}`, JSON.stringify(merged));
+    } catch {
+    }
+    try {
       await orca.plugins.setSettings("app", pluginName, merged);
     } catch {
     }
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(McardPanel, { pluginName, settings, onSettingsChange });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(McardPanel, { pluginName, settings, onSettingsChange, panelId: props.panelId });
 }
 function CaptureModal({ onClose }) {
   const { useEffect, useState, useRef } = window.React;
